@@ -8411,15 +8411,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\VirtualBox\\.nuget\\packages\\": {}
+    "C:\\Users\\Maxime\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "ProjectHousing",
       "projectName": "ProjectHousing",
-      "projectPath": "C:\\Users\\VirtualBox\\Documents\\GitHub\\AJC-RPA_Equipe3\\02-Robot\\.local",
-      "packagesPath": "C:\\Users\\VirtualBox\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\VirtualBox\\Documents\\GitHub\\AJC-RPA_Equipe3\\02-Robot\\.local"
+      "projectPath": "C:\\Users\\Maxime\\Documents\\GitHub\\AJC-RPA_Equipe3\\02-Robot\\.local",
+      "packagesPath": "C:\\Users\\Maxime\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Maxime\\Documents\\GitHub\\AJC-RPA_Equipe3\\02-Robot\\.local"
     },
     "frameworks": {
       "net461": {
@@ -8445,7 +8445,7 @@
             "version": "[22.4.7, 22.4.7]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\VirtualBox\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\Maxime\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
       }
     },
     "runtimes": {
