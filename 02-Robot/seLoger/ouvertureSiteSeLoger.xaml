@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ouvertureSiteSeLoger" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1080,1402" sap2010:WorkflowViewState.IdRef="ouvertureSiteSeLoger_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ouvertureSiteSeLoger" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1087,1537" sap2010:WorkflowViewState.IdRef="ouvertureSiteSeLoger_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -69,63 +69,90 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ouvertureSiteSeLoger" sap:VirtualizedContainerService.HintSize="966,1339" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ouvertureSiteSeLoger" sap:VirtualizedContainerService.HintSize="966,1472" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="924,125" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;debut ouverture site seloger.com&quot;]" />
-    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" ContinueOnError="False" DisplayName="Use Browser Chrome: Petites annonces immobilières | 1er site immobilier français | Portail immo" sap:VirtualizedContainerService.HintSize="924,1082" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="6cc10d29-c6b4-4014-916c-2d799a089ae8" Version="V2">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="924,121" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;debut ouverture site seloger.com&quot;]" />
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" ContinueOnError="False" DisplayName="Use Browser Chrome: Petites annonces immobilières | 1er site immobilier français | Portail immo" sap:VirtualizedContainerService.HintSize="924,1219" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="6cc10d29-c6b4-4014-916c-2d799a089ae8" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Faire" sap:VirtualizedContainerService.HintSize="890,865" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Faire" sap:VirtualizedContainerService.HintSize="890,1003" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:RetryScope ContinueOnError="False" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="848,771" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3">
+            <ui:RetryScope ContinueOnError="False" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="848,910" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
-                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="376,174" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="376,321" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="334,82" sap2010:WorkflowViewState.IdRef="NGoToUrl_2" Url="https://www.seloger.com/" Version="V1" />
+                    <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="334,81" sap2010:WorkflowViewState.IdRef="NGoToUrl_2" Url="https://www.seloger.com/" Version="V1" />
+                    <uix:NCheckState Exists="{x:Null}" sap2010:Annotation.AnnotationText="Si une recherche a été lancée, clique sur 'nouvelle recherche'" DisplayName="Check App State 'Nouvelle recherche'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="334,108" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="6cc10d29-c6b4-4014-916c-2d799a089ae8" Version="V1">
+                      <uix:NCheckState.IfExists>
+                        <Sequence DisplayName="La cible apparaît" sap:VirtualizedContainerService.HintSize="376,411" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,121" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Warn" Message="[&quot;ancienne recherche detectee, demarrage d'une nouvelle recherche&quot;]" />
+                          <uix:NClick ClickType="Single" DisplayName="Click 'Nouvelle recherche'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6cc10d29-c6b4-4014-916c-2d799a089ae8" Version="V1">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://www.seloger.com/" DesignTimeRectangle="434, 428, 194, 48" ElementType="Button" FriendlyName="'Nouvelle recherche'" FullSelectorArgument="&lt;webctrl tag='BUTTON' innertext='Nouvelle recherche' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' innertext='Nouvelle recherche' type='' class='init-search sc-EHOje jTgPmc' aaname='Nouvelle recherche' check:text='Nouvelle recherche' /&gt;" Guid="2066122e-f61d-4a99-8d12-85eebeb97458" ImageBase64="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" InformativeScreenshot="8e62252fa789dbbd5f54d8571f361d9a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' url='https://www.seloger.com/' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                        </Sequence>
+                      </uix:NCheckState.IfExists>
+                      <uix:NCheckState.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.seloger.com/" DesignTimeRectangle="434, 428, 194, 48" ElementType="Text" FriendlyName="'Nouvelle recherche'" FullSelectorArgument="&lt;webctrl aaname='Nouvelle recherche' tag='BUTTON' innertext='Nouvelle recherche' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Nouvelle recherche' tag='BUTTON' innertext='Nouvelle recherche' type='' class='init-search sc-EHOje jTgPmc' check:text='Nouvelle recherche' /&gt;" Guid="76e8d7e4-4872-4f43-9a96-38669d396369" ImageBase64="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" InformativeScreenshot="f18fa551fa6d459c3a4a76bee1959b14.png" ScopeSelectorArgument="&lt;html app='chrome.exe' url='https://www.seloger.com/' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+                      </uix:NCheckState.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NCheckState>
                   </Sequence>
                 </ActivityAction>
               </ui:RetryScope.ActivityBody>
               <ui:RetryScope.Condition>
                 <ActivityFunc x:TypeArguments="x:Boolean">
-                  <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Rechercher'" sap:VirtualizedContainerService.HintSize="806,437" sap2010:WorkflowViewState.IdRef="NCheckState_1" Version="V1">
+                  <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Rechercher'" sap:VirtualizedContainerService.HintSize="806,430" sap2010:WorkflowViewState.IdRef="NCheckState_1" Version="V1">
                     <uix:NCheckState.IfExists>
-                      <Sequence DisplayName="La cible apparaît" sap:VirtualizedContainerService.HintSize="376,219" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <Sequence DisplayName="La cible apparaît" sap:VirtualizedContainerService.HintSize="376,213" sap2010:WorkflowViewState.IdRef="Sequence_3">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,125" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;fin ouverture seloger.com - reussite&quot;]" />
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,121" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;fin ouverture seloger.com - reussite&quot;]" />
                       </Sequence>
                     </uix:NCheckState.IfExists>
                     <uix:NCheckState.IfNotExists>
-                      <Sequence DisplayName="La cible n'apparaît pas" sap:VirtualizedContainerService.HintSize="376,219" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <Sequence DisplayName="La cible n'apparaît pas" sap:VirtualizedContainerService.HintSize="376,214" sap2010:WorkflowViewState.IdRef="Sequence_4">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,125" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;probleme ouverture site seloger.com&quot;]" />
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,121" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;probleme ouverture site seloger.com&quot;]" />
                       </Sequence>
                     </uix:NCheckState.IfNotExists>
                     <uix:NCheckState.Target>
