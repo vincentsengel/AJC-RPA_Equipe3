@@ -1,8 +1,2 @@
-02-Robot/.local/AllDependencies.json
+02-Robot/.local/*
 .gitignore
-02-Robot/.local/PackageBindingsMetadata.json
-02-Robot/.local/PackageCache.json
-02-Robot/.local/ProjectHousing.nuget.props
-02-Robot/.local/ProjectSettings.json
-02-Robot/.local/db/references.db
-02-Robot/.local/nuget.cache
