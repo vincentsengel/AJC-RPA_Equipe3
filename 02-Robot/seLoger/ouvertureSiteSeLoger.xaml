@@ -1,0 +1,173 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ouvertureSiteSeLoger" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1087,1537" sap2010:WorkflowViewState.IdRef="ouvertureSiteSeLoger_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="ouvertureSiteSeLoger" sap:VirtualizedContainerService.HintSize="966,1472" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="924,121" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;debut ouverture site seloger.com&quot;]" />
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" ContinueOnError="False" DisplayName="Use Browser Chrome: Petites annonces immobilières | 1er site immobilier français | Portail immo" sap:VirtualizedContainerService.HintSize="924,1219" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="6cc10d29-c6b4-4014-916c-2d799a089ae8" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Faire" sap:VirtualizedContainerService.HintSize="890,1003" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:RetryScope ContinueOnError="False" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="848,910" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3">
+              <ui:RetryScope.ActivityBody>
+                <ActivityAction>
+                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="376,321" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="334,81" sap2010:WorkflowViewState.IdRef="NGoToUrl_2" Url="https://www.seloger.com/" Version="V1" />
+                    <uix:NCheckState Exists="{x:Null}" sap2010:Annotation.AnnotationText="Si une recherche a été lancée, clique sur 'nouvelle recherche'" DisplayName="Check App State 'Nouvelle recherche'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="334,108" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="6cc10d29-c6b4-4014-916c-2d799a089ae8" Version="V1">
+                      <uix:NCheckState.IfExists>
+                        <Sequence DisplayName="La cible apparaît" sap:VirtualizedContainerService.HintSize="376,411" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,121" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Warn" Message="[&quot;ancienne recherche detectee, demarrage d'une nouvelle recherche&quot;]" />
+                          <uix:NClick ClickType="Single" DisplayName="Click 'Nouvelle recherche'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6cc10d29-c6b4-4014-916c-2d799a089ae8" Version="V1">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://www.seloger.com/" DesignTimeRectangle="434, 428, 194, 48" ElementType="Button" FriendlyName="'Nouvelle recherche'" FullSelectorArgument="&lt;webctrl tag='BUTTON' innertext='Nouvelle recherche' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' innertext='Nouvelle recherche' type='' class='init-search sc-EHOje jTgPmc' aaname='Nouvelle recherche' check:text='Nouvelle recherche' /&gt;" Guid="2066122e-f61d-4a99-8d12-85eebeb97458" ImageBase64="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" InformativeScreenshot="8e62252fa789dbbd5f54d8571f361d9a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' url='https://www.seloger.com/' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                        </Sequence>
+                      </uix:NCheckState.IfExists>
+                      <uix:NCheckState.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.seloger.com/" DesignTimeRectangle="434, 428, 194, 48" ElementType="Text" FriendlyName="'Nouvelle recherche'" FullSelectorArgument="&lt;webctrl aaname='Nouvelle recherche' tag='BUTTON' innertext='Nouvelle recherche' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Nouvelle recherche' tag='BUTTON' innertext='Nouvelle recherche' type='' class='init-search sc-EHOje jTgPmc' check:text='Nouvelle recherche' /&gt;" Guid="76e8d7e4-4872-4f43-9a96-38669d396369" ImageBase64="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" InformativeScreenshot="f18fa551fa6d459c3a4a76bee1959b14.png" ScopeSelectorArgument="&lt;html app='chrome.exe' url='https://www.seloger.com/' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+                      </uix:NCheckState.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NCheckState>
+                  </Sequence>
+                </ActivityAction>
+              </ui:RetryScope.ActivityBody>
+              <ui:RetryScope.Condition>
+                <ActivityFunc x:TypeArguments="x:Boolean">
+                  <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Rechercher'" sap:VirtualizedContainerService.HintSize="806,430" sap2010:WorkflowViewState.IdRef="NCheckState_1" Version="V1">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="La cible apparaît" sap:VirtualizedContainerService.HintSize="376,213" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,121" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;fin ouverture seloger.com - reussite&quot;]" />
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="La cible n'apparaît pas" sap:VirtualizedContainerService.HintSize="376,214" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,121" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;probleme ouverture site seloger.com&quot;]" />
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.seloger.com/" DesignTimeRectangle="351, 485, 126, 50" ElementType="Text" FriendlyName="'Rechercher'" FullSelectorArgument="&lt;webctrl parentid='agatha_actionbuttons' innertext='Rechercher' idx='3' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='agatha_actionbuttons' innertext='Rechercher' tag='A' type='' class='c-quest-actions-search' aaname='Rechercher' check:text='Rechercher' /&gt;" Guid="9131f131-9f2a-4c2c-a0cd-36314ccbb6ef" ImageBase64="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" InformativeScreenshot="c58ffb5aacd5a62985a4ecddcc5b869d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' url='https://www.seloger.com/*' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
+                </ActivityFunc>
+              </ui:RetryScope.Condition>
+            </ui:RetryScope>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="1090, 29, 844, 1063" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALDSURBVEhLtZS7a1RBFMa/aHBBjeKjUaMEC0Vc0ezu3UeyEVEbo4WPYNIE/AeCGNFG0UqwM1iKdkJIQoL4aASjoI0WUbAQYuLe3fvYh5AiKijJev3Ovbs4A5dUN8WPnXNm5vtmzpm78DxvVQlNRkloMkpCk1ESmowSLSjCUMgIa0ykNrhIb60gt81EenMBR1oX0IfvOLW2iNR4AUmHa+ZIjkBQNbVAN0jvpsF1bpiwkH7tIPPWhPHCROe9Gk7nKji5xQzEPfKTdIq4oGpqQYmnFii0nyYfeULZ7BV8ko1x0qP5COfjjBdpIvEnG/mNBIKqqQUWsj7c8FjEhBLSnyk6yvEURd+VYJhcM2Ah1yviQgnZp2WcaCEQVE0taJRnF0/+tWGwZCOToYnkWyje6iARKyIh8e3mIXjDuwRNVE0tcNAltHOzb8BfChjPazgWd3kzGqCC83CRE4OxpoGD7GCZuSaqphb85euo4wIXdY80a94wctnoK0Uk1y3gGn6jf72N7pkCEtKT+i/0ZpdxDks466NqaoFM1mlSxdEYa3uH4otBgwMj5iZrGIqVcHCviYTZOMC8jWyHw5ML9ko3sPiCquhhCbpYghQXZ46XkHpTwCEKSbkSXhkDl3mjPL+HH2LM8SsH6U223ye/V5qmFsgkT+m/ZRlLPWnW5uDiWGAigslHNnouyVgMLKQeuFxvBQ9kZQO+lnY2ch8XdfB3O2mzkG+rYOjhNxzwDfhEb/JZDsu4wTjX86M0dpI9ZIeqqRlwcpKYLM88ec/xNH8/FHB4OSiRUeXfRrsDY/h/X1J/mJ/jui/EZTytamoGnJxXNmrQbJaccVmCSvAVz4asEWZUTc2ghp7+KvJXWar73DDBEz0jo2zeDebi3MyeSG+ETBebO8J1U7zBS/KEJb1F+lRNzWA1CE1GSWgySkKTURKajA4P/wCCf1RFcquCQAAAAABJRU5ErkJggg==" InformativeScreenshot="e94998ff82e624f4b5b0acec3f57221d.png" Selector="&lt;html app='chrome.exe' url='https://www.seloger.com/' /&gt;" Url="https://www.seloger.com/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
