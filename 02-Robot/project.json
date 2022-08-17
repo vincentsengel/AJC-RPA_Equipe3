@@ -1,7 +1,7 @@
 {
   "name": "ProjectHousing",
   "description": "Processus vierge",
-  "main": "google-sheets\\google_sheets.xaml",
+  "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.12.3]",
     "UiPath.GSuite.Activities": "[1.16.2]",
@@ -13,7 +13,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "22.4.4.0",
-  "projectVersion": "1.0.0",
+  "projectVersion": "1.0.4",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -46,8 +46,8 @@
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
-      "filePath": "google-sheets\\google_sheets.xaml",
-      "uniqueId": "b19da313-b6cd-4b4d-aa96-bae81043ca42",
+      "filePath": "Main.xaml",
+      "uniqueId": "3b351bba-d287-4f63-967a-c0880e0129fc",
       "input": [],
       "output": []
     }
