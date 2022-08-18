@@ -1,0 +1,496 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="rechercheSeLoger" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="IN_tableCriteres" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="OUT_tableAnnonces" Type="OutArgument(sd:DataTable)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1256,3615</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>rechercheSeLoger_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="74">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="34">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="rechercheSeLoger" sap:VirtualizedContainerService.HintSize="952,3550" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="STR_urlSite" />
+      <Variable x:TypeArguments="x:String" Name="STR_urlSiteTypeBien" />
+      <Variable x:TypeArguments="x:String" Name="STR_urlSiteTypeAchat" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage sap2010:Annotation.AnnotationText="" DisplayName="Log debut" sap:VirtualizedContainerService.HintSize="910,82" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;debut recherche seloger.com&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <If sap2010:Annotation.AnnotationText="STR_urlSiteTypeBien = 2 si maison&#xA;STR_urlSiteTypeBien = 1 sinon&#xA;" Condition="[IN_tableCriteres.Rows(0)(&quot;realEstateObject&quot;).toString = &quot;maison&quot;]" DisplayName="If type de bien" sap:VirtualizedContainerService.HintSize="910,123" sap2010:WorkflowViewState.IdRef="If_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[STR_urlSiteTypeBien]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">2</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[STR_urlSiteTypeBien]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">1</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Else>
+    </If>
+    <If sap2010:Annotation.AnnotationText="STR_urlSiteTypeAchat = 1 si ancien&#xA;STR_urlSiteTypeAchat = 2 sinon (&quot;neuf&quot;)&#xA;" Condition="[IN_tableCriteres.Rows(0)(&quot;typeResearch&quot;).toString = &quot;ancien&quot;]" DisplayName="If type achat" sap:VirtualizedContainerService.HintSize="910,138" sap2010:WorkflowViewState.IdRef="If_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[STR_urlSiteTypeAchat]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">1</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[STR_urlSiteTypeAchat]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">2</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Else>
+    </If>
+    <Assign sap2010:Annotation.AnnotationText="Creation de l'URL de recherche" DisplayName="Assign pour injection URL" sap:VirtualizedContainerService.HintSize="910,91" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[STR_urlSite]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["https://www.seloger.com/recherche-avancee.html?tri=initial&amp;enterprise=0&amp;idtypebien="+ STR_urlSiteTypeBien + "&amp;div=2238&amp;idtt=2&amp;naturebien="+"1"+"&amp;m=search_hp_new"]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="navigateur Chrome" sap:VirtualizedContainerService.HintSize="910,2864" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="0e4d79d1-e0ba-40a1-90f3-4f74a96f594a" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Faire" sap:VirtualizedContainerService.HintSize="876,2648" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="STR_sample_2" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log utilisation navigateur" sap:VirtualizedContainerService.HintSize="834,51" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Trace" Message="[&quot;debut recherche seloger&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+            <uix:NGoToUrl DisplayName="Go To URL injection URL" sap:VirtualizedContainerService.HintSize="834,51" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="[STR_urlSite]" Version="V1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NGoToUrl>
+            <uix:NClick ClickType="Single" DisplayName="effacer recherche en cours" sap:VirtualizedContainerService.HintSize="834,51" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0e4d79d1-e0ba-40a1-90f3-4f74a96f594a" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.seloger.com/recherche-avancee.html?tri=initial&amp;enterprise=0&amp;idtypebien=1&amp;div=2238&amp;idtt=2&amp;naturebien=1&amp;m=search_hp_new" DesignTimeRectangle="495, 600, 12, 12" ElementType="Icon" FriendlyName="'SVG'" FullSelectorArgument="&lt;webctrl aria-role='img' tag='svg' parentclass='sc-jKJlTe eSgMEa sc-bwzfXH cTtcAE' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='img' tag='svg' parentclass='sc-jKJlTe eSgMEa sc-bwzfXH cTtcAE' type='' class='' aaname='' /&gt;" Guid="cef261ea-749f-42b7-bdcd-55ab5b6a4311" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB+SURBVDhPY1i0eON/SjD1DJg9d93/xpaFGArQcUfXErBaGB9uAEjCxqHhf3XtfLgkOgbJgdSA1MLEULwAU4DNEFxyGGGATSEuzSCMNRCRNeDTDMJYDQBhmEZ8mkGYNgbANINoZDY2tdQNRHwKccnBDaA4IVGclMnFFBqw8T8AtuzTV/JC2t4AAAAASUVORK5CYII=" InformativeScreenshot="d72d0f1b304f172892c1f8b70938ad8d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' url='https://www.seloger.com/recherche-avancee.html*' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <uix:NClick ClickType="Single" DisplayName="ouverture input localite" sap:VirtualizedContainerService.HintSize="834,51" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0e4d79d1-e0ba-40a1-90f3-4f74a96f594a" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.seloger.com/recherche-avancee.html?tri=initial&amp;enterprise=0&amp;idtypebien=1&amp;div=2238&amp;idtt=2&amp;naturebien=1&amp;m=search_hp_new" DesignTimeRectangle="408, 680, 712, 40" FriendlyName="'Ajouter une'" FullSelectorArgument="&lt;webctrl parentid='root' tabindex='0' tag='DIV' class='FakeLocationInput__FakeInput-sc-1y0ga6y-0 gDXFry' title='Recherche Avancée' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='root' tabindex='0' tag='DIV' class='FakeLocationInput__FakeInput-sc-1y0ga6y-0 gDXFry' title='Recherche Avancée' type='' aaname='' check:text='Ajouter une ville, un code postal ou un quartier' /&gt;" Guid="080b2296-0a43-401e-a81e-485ab0f0c126" ImageBase64="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" InformativeScreenshot="c4610d071edc622fcc9e05626b30e473.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Recherche Avancée' /&gt;" SearchSteps="Selector" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="408, 656, 712, 24" ElementType="Text" FriendlyName="'Rechercher par localité'" FullSelectorArgument="&lt;webctrl aaname='Rechercher par localité' parentid='root' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Rechercher par localité' parentid='root' tag='DIV' type='' class='FakeLocationInput__FakeLabel-sc-1y0ga6y-1 leOyDv' check:innerText='Rechercher par localité' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAswAAAAcCAYAAAB1cOkcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPfSURBVHhe7dpBbqM6AIDhd5/cK1fJvlforptco8vcI+qqB+BhbINtwElnVM1M+T7JUoiDY8LmL+p/AwAAsEswAwBAh2AGAIAOwQwAAB2CGQAAOgQzD92v5+F8vacjAIBj+fZgvl1Ow+l0GW7p+Nvcr8P5dPrnwi7E6Ol0Hr5z2+13fOk7b5fxs+Eefu8eAQD+Vkswz2FUjt8PXcHc9yeCOd6T03BJN2WaP1+H9RZuw6X4HADAEa2CeYmj+3A9j2G1GVLPE8x9fyKYW9M9+s37DADwU3WCeSO0UpTmJ9D1k8f4NDLPndJkDubrtFacq6O2Pm+Zy083U7hPr+NM3Fc+J+1vDuZrsV4d6vV5y9z0fgjG/JS9icd4Xn0N+fom7dP54vzn1q5jdm+f0fJ7VOs192Z1fcV3lMf5afM85uvauy8AAMfy+AnzHF4xoOZwmj5fzy2xdR8DcRzjqxxk+bwYa/m89B1LCY/Rl8MuB9tWTBbxd7+NY5pIwdjb73LetK/0vXOgLhdfyfP1Wsvx7VLssZl7bu3ieqrj9in/+jj/zuG85edPv0V1fXvfkX6LKuR79wUA4Fge/A9z+1R3eWo5njAFaZhvA6yUnzDP55Xh2kRsDrUYm22EB1vvJSkS56itoq8JwGD67riv3v6D9XxnH83c19beWDfdl+mt8nVXHdbtHtrjVTB37wsAwLHsPGGO4VYGUn5S3I7w+VUUF3rBHMOtXi+M3WBeRXGhG8xprdX41WCug3R6p72WtO8vrb11fcV7j9bK93AevxjMcb5YJ43N3x0A4Ifb/ZeMGE1L6LbHpTbASr1grl6vbATz5nvJV58wF3r7D9bz5T7S2vM11nv82tob11fel+YeleLvnNepg77dQ3vcBnP/vgAAHEvnf5jbeFvH3H365+HwIsbqMneP/1c86gZzE3aT8cT4eiMeR3UYjvLnu8E8Wl3fssfnorb9YyIfN/tM35OPn1t7ma+P298nfVf5NHi6iOZz+X6k4/535N+0/GOod18AAI6lE8w5pMoITcE2jyIEc6TNIwZYP5iDFGfFuZshWsj7ymPa36NgDnLM5rETlK08fy72WS4b59PcODHtL33g0dp53+VvVK1XhWywcw/Kaxuv6xbWaAM6rbXeU7HmHMl79wUA4FiWYGbXw+gFAODHEsxPEMwAAMclmJ8gmAEAjkswAwBAh2AGAIAOwQwAAB2CGQAAOgQzAAB0CGYAAOgQzAAA0FEF8+fn5/D+/j68vr4OLy8vhmEYhmEYhnGYERo4tHBo4tIczGHi7e1t+tDHx0d6FwAAjiE0cGjh0MRLNA/D/4hxjZca2d45AAAAAElFTkSuQmCC" SearchSteps="Selector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="remplissage input localite" sap:VirtualizedContainerService.HintSize="834,51" sap2010:WorkflowViewState.IdRef="SetValue_1" Text="[IN_tableCriteres(0)(&quot;locationResearch&quot;).toString]">
+              <ui:SetValue.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6af0e787-4aa7-4e3c-909a-c07d74b5f097" InformativeScreenshot="eee5c534dc60cdbe032f8504ce140341" Selector="&lt;html app='chrome.exe' url='https://www.seloger.com/recherche-avancee.html*' /&gt;&lt;webctrl aria-role='textbox' tag='INPUT' type='text' class='sc-bZQynM eEGHZX' parentclass='sc-iwsKbI fzPyAB' title='Recherche Avancée' idx='2' /&gt;" WaitForReady="NONE">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                </ui:Target>
+              </ui:SetValue.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:SetValue>
+            <uix:NClick ClickType="Single" DisplayName="affichage des localites possibles" sap:VirtualizedContainerService.HintSize="834,156" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0e4d79d1-e0ba-40a1-90f3-4f74a96f594a" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.seloger.com/recherche-avancee.html?tri=initial&amp;enterprise=0&amp;idtypebien=1&amp;div=2238&amp;idtt=2&amp;naturebien=1&amp;m=search_hp_new" DesignTimeRectangle="734, 438, 451, 40" ElementType="InputBox" FriendlyName="'Lyon'" FullSelectorArgument="&lt;webctrl aria-role='textbox' tag='INPUT' type='text' class='sc-bZQynM eEGHZX' parentclass='sc-iwsKbI fzPyAB' title='Recherche Avancée' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='textbox' tag='INPUT' type='text' class='sc-bZQynM eEGHZX' parentclass='sc-iwsKbI fzPyAB' title='Recherche Avancée' aaname='' /&gt;" Guid="b1033f3c-5530-488c-8796-2714a267a30a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAccAAAAsCAYAAAAQCHNHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ+SURBVHhe7do9ctpAAIbh3Id7cRVaj68AFQ3HMHTcA1NB4z827Eori0XJeBKyMfA8M18hIZPynVX4EQCAE+IIAIWTOO52u7BcLsN0Og2Pj49mZmY3vdi72L3Yv74ujvv9Pszn8/TQdrtt7wLA7Yq9i92L/YsdzLo4rlar9AAA3JuygV0cZ7OZEyMAdyn2L3Yw6+IY370CwL3qd1AcAeBIHAGgII4AUBBHACiIIwAUxBEACuIIAAVxBICCOAJAQRwBoHDROG4W4zAaL8KmvQaAaySOAFAQRwAoVIljuj+ahHV73diExXgURpN8dx0mo+N1Xne/tZ40371ZhHH3XPmdAPD3Kp0cmxCOF71PUuTGobnVhPHz8zKcRzGOMYjd9w88AwAXUCmO55+l6zZsg393Es+jFMfTk+Lv/j0A+FPV4ticDnPsmlNfPvStJ0MnwOY02d0WRwAqqRjHJoLp1Wk6FebQ/er1aPGqVRwBqKRqHFMUj5+v43O9GA7+ndeqAPwndeN4/CSdEvuvS5Ov/iBHHAH49y4fx/iL0mL9xjXPnEau0QSy+7vyNas4AlDJReP4FcM/vgGA76NuHMv/RwSAb6hOHFMUz1+xAsB3VPfkCABXQBwBoCCOAFAQRwAoiCMAFMQRAAriCACFwTjOZrOw3W7bKwC4H7F/sYNZF8fVahWWy2V7BQD3o2xgF8f9fh/m83l64Pn5ORwOBzMzs5te7F3sXuxf7GCW4pgf2u124enpKUyn0/Dw8GBmZnbTi72L3Yv9yy1MccwXcR8fH2nv7+9ne3t7MzMzu+oN9S23r9/DFMd+FPtf8vr6eraXlxczM7Or2lDP+r07jeQh/ARejMUqxjVzLgAAAABJRU5ErkJggg==" InformativeScreenshot="8325508ec6742d4a53f59422c91b660d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Recherche Avancée' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <uix:NClick ClickType="Single" DisplayName="choix de la premiere localite de la liste" sap:VirtualizedContainerService.HintSize="834,51" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0e4d79d1-e0ba-40a1-90f3-4f74a96f594a" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.seloger.com/recherche-avancee.html?tri=initial&amp;enterprise=0&amp;idtypebien=1&amp;div=2238&amp;idtt=2&amp;naturebien=1&amp;m=search_hp_new" DesignTimeRectangle="419, 518, 451, 40" FriendlyName="'Lyon (69)'" FullSelectorArgument="&lt;webctrl aria-role='combobox' idx='3' /&gt;&lt;webctrl aria-role='option' tag='DIV' idx='1' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='combobox' /&gt;&lt;webctrl aria-role='option' tag='DIV' type='' class='sc-jWBwVP cZajai' aaname='' check:text='Lyon (69)' /&gt;" Guid="3b6c0535-98e7-4a44-b95d-950480923f5e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAccAAAAsCAYAAAAQCHNHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAP/SURBVHhe7dsxb9NAGIdxvk++DxMSLPgbsLDAAIoEEkxIMIHUDQRZkDp0ZQAEUlShLh3KiBJVahCwMBz+n331+Y3jxum5ccTzkw4SO3GyPXrP6bWzszN3enrqAAD43y0WC7+IIwAAJeIIAIBBHAEAMIgjAAAGcQQAwCCOAAAYxBEAAIM4AgBgEEcAAAziCACAQRwBADCIIwAABnEEAMDoNY4n33/6BQDALkkex1+//7o3747drezAXb+x75ce6xgAALsgaRwVxjt3P7hHT766b0fFtXRMj+89+OjP7br5JHPZZF4+u4Tp2I3G0/IJAGBIksbx9dtjH0ZREDUtvto7Og+lAqnXrEshGmUTlyBFiUzdeDTO/01h7iZZ5lJ0FgCQVtI43rx94EOope1UxVCx1OPPX37449piXdfQ4ui/j5325hOXjUZuVK76VKmYrjqXY3oEgEFKFkf98EYRFE2HCmOgQD57fui3WPWa2exPeabdsOKoSW/kai1T3PLoVccUwzANFmGsgmifS8pJFACQSrI4KnhxHO8//OQfi8KoJSni6I8vRaWIVzWJ1ae2pQlNYdO1a5NfW6hsyIrPW3n/0YfTXC98Zvm0uAZbqwAwNMniKNpWDduniuDjp/nE+OLQP9ZxLb1mXasnx4Yw+citmtpsOHPl1Fddv+E1MV2/9l30GS1hWwphrvYdC9OxmUYBAFuXNI7xhKhAvtw78ktRlLC9uq62bVV7zj8vK9P4Phumhsmu7fOWYuevl7/f/x8mz+j65fEqfGV8TRz1mSunTwDAViSNY9habdo2Dfck191SldZY1Sa3IjwhRJrGlifAYpo8P7xJHONrhijGr7fX9M+jcE5NoHPEEQCGJ2kcRZNhfL8x0A90ukyN0h5HtafcOg1TnD+6anvUbLVuEsf4XO0zAxNgq+E9xBEAhid5HDUZhnuPQbjXqF+rdnFRHH1s8vNTvS4qUuP7fJiiqa1rHMvPqs41hbA9jv765iT3HAFgeJLHUd7vn/i/Z1QMtfRYx7q6MI75meI+XnOkqomsYZrsGkd/zYbXR8fs+6eT6Fr+8+pbqsX3sscAANvWSxxF26jaXtWK/+axiyI+4Z5dteLG2UBVikCev8+OZ53jWL+vGdS/Y3S9fNIc5+GrzjVEsGGbFQCwfb3FUROjtlI32U7tovnHN/3wIUz5WQr0FX13AMD6eoujKIpdfp3amb2P2LvlrdXNsaUKAEPVaxx746NYbFde9eCl6THJr0uZGgFgsHYzjgAA9Ig4AgBgEEcAAAziCACAQRwBADCIIwAABnEEAMAgjgAAGMQRAACDOAIAYBBHAACMS8dxNpuxWCwWizXo1RWTIwAARhHHhfsH2lhAHku+fK8AAAAASUVORK5CYII=" InformativeScreenshot="ffb5ec43f4dd77e6d5c251a584b08273.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Recherche Avancée' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <uix:NClick ClickType="Single" DisplayName="validation localite" sap:VirtualizedContainerService.HintSize="834,51" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0e4d79d1-e0ba-40a1-90f3-4f74a96f594a" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.seloger.com/recherche-avancee.html?tri=initial&amp;enterprise=0&amp;idtypebien=1&amp;div=2238&amp;idtt=2&amp;naturebien=1&amp;m=search_hp_new" DesignTimeRectangle="8, 79, 0, 0" ElementType="Button" FriendlyName="'Appliquer'" FullSelectorArgument="&lt;webctrl tag='BUTTON' innertext='Appliquer' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' innertext='Appliquer' aaname='Appliquer' class='sc-fjdhpX jAUoIW' parentclass='Result__CountResultContainer-sc-bfvs0t-1 fMRBGi' type='submit' check:text='Appliquer' /&gt;" Guid="22401200-2d98-450c-9228-25e6d5dcb0a5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAmSURBVBhXY4CB/1AA5TIw3L5z9z8IQ7kMDHMZVP6DMJQLE1D5DwAl6xYfPWX2uAAAAABJRU5ErkJggg==" ScopeSelectorArgument="&lt;html app='chrome.exe' url='https://www.seloger.com/recherche-avancee.html*' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="champs budget max" sap:VirtualizedContainerService.HintSize="834,51" sap2010:WorkflowViewState.IdRef="SetValue_2" Text="[IN_tableCriteres(0)(&quot;budgetResearch&quot;).toString]">
+              <ui:SetValue.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6af0e787-4aa7-4e3c-909a-c07d74b5f097" InformativeScreenshot="b34fc9a5e519fb8b87c1ea76b38af78e" Selector="&lt;html app='chrome.exe' title='Recherche Avancée' /&gt;&lt;webctrl aaname='Max' parentid='root' tag='SPAN' /&gt;&lt;nav up='2' /&gt;&lt;webctrl tag='INPUT' type='tel' aria-role='textbox' class='sc-bZQynM loqDxm' parentclass='sc-iwsKbI fzPyAB' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SetValue.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:SetValue>
+            <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="champs surface min" sap:VirtualizedContainerService.HintSize="834,51" sap2010:WorkflowViewState.IdRef="SetValue_3" Text="[IN_tableCriteres(0)(&quot;surfaceResearch&quot;).toString]">
+              <ui:SetValue.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6af0e787-4aa7-4e3c-909a-c07d74b5f097" InformativeScreenshot="8564d08e5106c8ab134b1145bc0eb0a3" Selector="&lt;html app='chrome.exe' title='Recherche Avancée' /&gt;&lt;webctrl aaname='Min' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;section&amp;gt;section&amp;gt;div&amp;gt;label&amp;gt;div&amp;gt;span' parentid='root' tag='SPAN' /&gt;&lt;nav up='2' /&gt;&lt;webctrl tag='INPUT' type='tel' aria-role='textbox' class='sc-bZQynM loqDxm' parentclass='sc-iwsKbI fzPyAB' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SetValue.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:SetValue>
+            <uix:NClick ClickType="Single" DisplayName="validation formulaire" sap:VirtualizedContainerService.HintSize="834,51" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0e4d79d1-e0ba-40a1-90f3-4f74a96f594a" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.seloger.com/recherche-avancee.html?tri=initial&amp;enterprise=0&amp;idtypebien=1&amp;div=2238&amp;idtt=2&amp;naturebien=1&amp;m=search_hp_new" DesignTimeRectangle="1362, 379, 150, 40" ElementType="Button" FriendlyName="'Rechercher'" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='submit' innertext='Rechercher' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' innertext='Rechercher' class='sc-fjdhpX jAUoIW' aaname='Rechercher' check:text='Rechercher' /&gt;" Guid="fd7fdd1b-6a43-4d46-a73f-582b5a99efd5" ImageBase64="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" InformativeScreenshot="30f3394d243f4b90f1898059c4130359.png" ScopeSelectorArgument="&lt;html app='chrome.exe' url='https://www.seloger.com/recherche-avancee.html*' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <ui:LogMessage DisplayName="Log fin recherche debut recuperation" sap:VirtualizedContainerService.HintSize="834,51" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace" Message="[&quot;fin recherche / debut extraction&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+            <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State '0 appartement'" sap:VirtualizedContainerService.HintSize="834,1266" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="0e4d79d1-e0ba-40a1-90f3-4f74a96f594a" Version="V1">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="La cible apparaît" sap:VirtualizedContainerService.HintSize="304,155" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_8">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="sd:DataTable">[OUT_tableAnnonces]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="sd:DataTable">[Nothing]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="La cible n'apparaît pas" sap:VirtualizedContainerService.HintSize="476,1050" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[OUT_tableAnnonces]" DisplayName="extraction resultats" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='objectPrice_brut'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='adUrl'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='text'&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='href'&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" ExtractSimilar="True" sap:VirtualizedContainerService.HintSize="434,156" sap2010:WorkflowViewState.IdRef="NExtractData_2" LimitExtractionTo="Rows" MaximumResults="3" ScopeIdentifier="0e4d79d1-e0ba-40a1-90f3-4f74a96f594a" Version="V1">
+                    <uix:NExtractData.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.seloger.com/list.htm?projects=2&amp;types=1&amp;natures=1&amp;places=[{%22inseeCodes%22:[690123]}]&amp;price=NaN/300000&amp;surface=50/NaN&amp;mandatorycommodities=0&amp;enterprise=0&amp;qsVersion=1.0&amp;m=homepage_advanced_search-redirection-search_results" DesignTimeRectangle="8, 154, 1337, 10800" FriendlyName="'Acheter, AppartementQuel'" FullSelectorArgument="&lt;webctrl parentid='root' tag='DIV' /&gt;" Guid="e190aec2-aba9-4e51-8c1d-ba7c5247614a" InformativeScreenshot="cf4f4bca69d09035927173210ddabbe9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='520 annonces de ventes d&amp;apos;appartements à Lyon (69), Seloger.com' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+                    </uix:NExtractData.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NExtractData>
+                  <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" sap2010:Annotation.AnnotationText="Creation d'une colonne pour l'identifiant de l'annonce" ColumnName="adReference" DataTable="[OUT_tableAnnonces]" DisplayName="Add Column pour ID des annonces" sap:VirtualizedContainerService.HintSize="434,93" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:AddDataColumn>
+                  <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" sap2010:Annotation.AnnotationText="Creation d'une colonne pour l'identifiant de l'annonce" ColumnName="objectPrice" DataTable="[OUT_tableAnnonces]" DisplayName="Add Column pour le prix converti en entier" sap:VirtualizedContainerService.HintSize="434,93" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:AddDataColumn>
+                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Ajout de la valeur de l'identifiant, extraite de l'URL" DataTable="[OUT_tableAnnonces]" DisplayName="remplissage colonne ID des annonces et conversion du prix" sap:VirtualizedContainerService.HintSize="434,403" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                    <ui:ForEachRow.Body>
+                      <ActivityAction x:TypeArguments="sd:DataRow">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,256" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_7">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Object">[CurrentRow("adReference")]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Object">[Split((System.Text.RegularExpressions.Regex.Match(CurrentRow("adUrl").ToString,"([\d]+.htm\?)").Value.Trim), "h")(0).ToString]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_9">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Object">[CurrentRow("objectPrice")]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Object">[Cint(System.Text.RegularExpressions.Regex.Replace(CurrentRow("objectPrice_brut").ToString, "[\W€]",""))]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEachRow.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:ForEachRow>
+                  <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="objectPrice_brut" DataTable="[OUT_tableAnnonces]" DisplayName="Remove Column prix_brut" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:RemoveDataColumn>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.seloger.com/list.htm?projects=2&amp;types=1&amp;natures=1&amp;places=[{%22inseeCodes%22:[690123]}]&amp;price=NaN/300&amp;mandatorycommodities=0&amp;enterprise=0&amp;qsVersion=1.0&amp;m=search_refine-redirection-search_results" DesignTimeRectangle="101, 495, 760, 30" ElementType="Text" FriendlyName="'0 appartement'" FullSelectorArgument="&lt;webctrl tag='H1' innertext='0 appartement à vendre*' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H1' innertext='0 appartement à vendre*' type='' class='Title__TitleContainer-f7wbzu-0 kOdUoQ' aaname='0 appartement à vendre à Lyon (69)' check:text='0 appartement à vendre à Lyon (69)' /&gt;" Guid="dc402e56-46c2-48ee-84d1-eb98ee36815c" ImageBase64="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" InformativeScreenshot="c7a764cb8cd2c09129ac28cd862235a0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' url='https://www.seloger.com/list*' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <ui:LogMessage DisplayName="Log fin du script" sap:VirtualizedContainerService.HintSize="834,51" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Trace" Message="[&quot;fin extraction des donnees de SeLoger&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="1120, 59, 844, 1063" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALDSURBVEhLtZS7a1RBFMa/aHBBjeKjUaMEC0Vc0ezu3UeyEVEbo4WPYNIE/AeCGNFG0UqwM1iKdkJIQoL4aASjoI0WUbAQYuLe3fvYh5AiKijJev3Ovbs4A5dUN8WPnXNm5vtmzpm78DxvVQlNRkloMkpCk1ESmowSLSjCUMgIa0ykNrhIb60gt81EenMBR1oX0IfvOLW2iNR4AUmHa+ZIjkBQNbVAN0jvpsF1bpiwkH7tIPPWhPHCROe9Gk7nKji5xQzEPfKTdIq4oGpqQYmnFii0nyYfeULZ7BV8ko1x0qP5COfjjBdpIvEnG/mNBIKqqQUWsj7c8FjEhBLSnyk6yvEURd+VYJhcM2Ah1yviQgnZp2WcaCEQVE0taJRnF0/+tWGwZCOToYnkWyje6iARKyIh8e3mIXjDuwRNVE0tcNAltHOzb8BfChjPazgWd3kzGqCC83CRE4OxpoGD7GCZuSaqphb85euo4wIXdY80a94wctnoK0Uk1y3gGn6jf72N7pkCEtKT+i/0ZpdxDks466NqaoFM1mlSxdEYa3uH4otBgwMj5iZrGIqVcHCviYTZOMC8jWyHw5ML9ko3sPiCquhhCbpYghQXZ46XkHpTwCEKSbkSXhkDl3mjPL+HH2LM8SsH6U223ye/V5qmFsgkT+m/ZRlLPWnW5uDiWGAigslHNnouyVgMLKQeuFxvBQ9kZQO+lnY2ch8XdfB3O2mzkG+rYOjhNxzwDfhEb/JZDsu4wTjX86M0dpI9ZIeqqRlwcpKYLM88ec/xNH8/FHB4OSiRUeXfRrsDY/h/X1J/mJ/jui/EZTytamoGnJxXNmrQbJaccVmCSvAVz4asEWZUTc2ghp7+KvJXWar73DDBEz0jo2zeDebi3MyeSG+ETBebO8J1U7zBS/KEJb1F+lRNzWA1CE1GSWgySkKTURKajA4P/wCCf1RFcquCQAAAAABJRU5ErkJggg==" InformativeScreenshot="5324c7c258853ad9a6e8cb42842293f7.png" Selector="&lt;html app='chrome.exe' url='https://www.seloger.com/' /&gt;" Url="https://www.seloger.com/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

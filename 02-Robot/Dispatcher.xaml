@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Activity mc:Ignorable="sap sap2010" x:Class="Dispatcher" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1186,827" sap2010:WorkflowViewState.IdRef="Dispatcher_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Dispatcher" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="896,825" sap2010:WorkflowViewState.IdRef="Dispatcher_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="58">
       <x:String>System.Activities</x:String>
@@ -76,15 +75,9 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke InitDatatable workflow" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Framework\InitDatatable.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_googlesheet">
-          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="DT_googlesheet" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_seloger">
-          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="DT_seloger" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_financement">
-          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="DT_financement" />
-        </OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_googlesheet">[DT_googlesheet]</OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_seloger">[DT_seloger]</OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_financement">[DT_financement]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke google_sheets workflow" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Framework\google-sheets\google_sheets.xaml">
@@ -108,30 +101,14 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="jobQueue">
               <ui:AddQueueItem.ItemInformation>
-                <InArgument x:TypeArguments="x:String" x:Key="realEstateObject">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;realEstateObject&quot;).ToString" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="locationResearch">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;locationResearch&quot;).ToString" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:Int32" x:Key="budgetResearch">
-                  <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="Cint(CurrentRow(&quot;budgetResearch&quot;))" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:Int32" x:Key="surfaceResearch">
-                  <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="Cint(CurrentRow(&quot;surfaceResearch&quot;))" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="typeResearch">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;typeResearch&quot;).ToString" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:Boolean" x:Key="buyAlone">
-                  <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Convert.ToBoolean(CurrentRow(&quot;buyAlone&quot;))" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:Int32" x:Key="maximumLoanDuration">
-                  <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="Cint(CurrentRow(&quot;maximumLoanDuration&quot;))" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:Int32" x:Key="monthlyIncomes">
-                  <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="Cint(CurrentRow(&quot;monthlyIncomes&quot;))" />
-                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="realEstateObject">[CurrentRow("realEstateObject").ToString]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="locationResearch">[CurrentRow("locationResearch").ToString]</InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="budgetResearch">[Cint(CurrentRow("budgetResearch"))]</InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="surfaceResearch">[Cint(CurrentRow("surfaceResearch"))]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="typeResearch">[CurrentRow("typeResearch").ToString]</InArgument>
+                <InArgument x:TypeArguments="x:Boolean" x:Key="buyAlone">[Convert.ToBoolean(CurrentRow("buyAlone"))]</InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="maximumLoanDuration">[Cint(CurrentRow("maximumLoanDuration"))]</InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="monthlyIncomes">[Cint(CurrentRow("monthlyIncomes"))]</InArgument>
               </ui:AddQueueItem.ItemInformation>
             </ui:AddQueueItem>
           </Sequence>
