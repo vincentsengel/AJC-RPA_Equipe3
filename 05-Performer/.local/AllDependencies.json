@@ -9546,15 +9546,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\VirtualBox\\.nuget\\packages\\": {}
+    "C:\\Users\\Megaport\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "Performer",
       "projectName": "Performer",
-      "projectPath": "C:\\Users\\VirtualBox\\Documents\\GitHub\\AJC-RPA_Equipe3\\05-Performer\\.local",
-      "packagesPath": "C:\\Users\\VirtualBox\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\VirtualBox\\Documents\\GitHub\\AJC-RPA_Equipe3\\05-Performer\\.local"
+      "projectPath": "C:\\Users\\Megaport\\Documents\\UiPath\\AJC-RPA_Equipe3-master\\05-Performer\\.local",
+      "packagesPath": "C:\\Users\\Megaport\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Megaport\\Documents\\UiPath\\AJC-RPA_Equipe3-master\\05-Performer\\.local"
     },
     "frameworks": {
       "net461": {
@@ -9590,7 +9590,7 @@
             "version": "[22.4.7, 22.4.7]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\VirtualBox\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\Megaport\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
       }
     },
     "runtimes": {

@@ -56,7 +56,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="35">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="70">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -158,7 +158,7 @@
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[OUT_tableCriteres.Columns("TYPE").ColumnName]</OutArgument>
+              <OutArgument x:TypeArguments="x:String">[OUT_tableCriteres.Columns("realEstateObject").ColumnName]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:String">realEstateObject</InArgument>
@@ -166,7 +166,7 @@
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[OUT_tableCriteres.Columns("LIEU").ColumnName]</OutArgument>
+              <OutArgument x:TypeArguments="x:String">[OUT_tableCriteres.Columns("locationResearch").ColumnName]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:String">locationResearch</InArgument>
@@ -174,7 +174,7 @@
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[OUT_tableCriteres.Columns("BUDGET").ColumnName]</OutArgument>
+              <OutArgument x:TypeArguments="x:String">[OUT_tableCriteres.Columns("budgetResearch").ColumnName]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:String">budgetResearch</InArgument>
@@ -182,7 +182,7 @@
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[OUT_tableCriteres.Columns("SURFACE").ColumnName]</OutArgument>
+              <OutArgument x:TypeArguments="x:String">[OUT_tableCriteres.Columns("surfaceResearch").ColumnName]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:String">surfaceResearch</InArgument>
@@ -190,7 +190,7 @@
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[OUT_tableCriteres.Columns("TYPE_ACHAT").ColumnName]</OutArgument>
+              <OutArgument x:TypeArguments="x:String">[OUT_tableCriteres.Columns("typeResearch").ColumnName]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:String">typeResearch</InArgument>
@@ -198,7 +198,7 @@
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[OUT_tableCriteres.Columns("NOMBRE_EMPRUNTEUR").ColumnName]</OutArgument>
+              <OutArgument x:TypeArguments="x:String">[OUT_tableCriteres.Columns("buyAlone_str").ColumnName]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:String">buyAlone_str</InArgument>
@@ -206,7 +206,7 @@
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[OUT_tableCriteres.Columns("DUREE_MAX").ColumnName]</OutArgument>
+              <OutArgument x:TypeArguments="x:String">[OUT_tableCriteres.Columns("maximumLoanDuration").ColumnName]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:String">maximumLoanDuration</InArgument>
@@ -214,7 +214,7 @@
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[OUT_tableCriteres.Columns("REVENUS_MENSUEL").ColumnName]</OutArgument>
+              <OutArgument x:TypeArguments="x:String">[OUT_tableCriteres.Columns("monthlyIncomes").ColumnName]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:String">monthlyIncomes</InArgument>
