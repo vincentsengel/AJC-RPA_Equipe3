@@ -1,14 +1,14 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Séquence" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Séquence" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_urlSite" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1410,1260</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>960,1397</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Séquence_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <sco:Collection x:TypeArguments="x:String">
+    <scg:List x:TypeArguments="x:String" Capacity="32">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -41,10 +41,10 @@
       <x:String>System.Runtime.InteropServices</x:String>
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Runtime.Serialization</x:String>
-    </sco:Collection>
+    </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <sco:Collection x:TypeArguments="AssemblyReference">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -77,29 +77,41 @@
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
-    </sco:Collection>
+    </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Ouverture hellopret.com" sap:VirtualizedContainerService.HintSize="798,1195" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Ouverture hellopret.com" sap:VirtualizedContainerService.HintSize="798,1332" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="url_helloPret" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="756,121" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;debut ouverture hellopret&quot;]" />
-    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Simulez votre prêt immobilier - Simulateur crédit immobilier" sap:VirtualizedContainerService.HintSize="756,781" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="0efc2c56-42e4-4a63-b7a5-aa5e2254e90c" Version="V2">
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="url_helloPret" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="756,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:String">[url_helloPret]</OutArgument>
+      </ui:GetRobotAsset.Value>
+    </ui:GetRobotAsset>
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Simulez votre prêt immobilier - Simulateur crédit immobilier" sap:VirtualizedContainerService.HintSize="756,741" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="0efc2c56-42e4-4a63-b7a5-aa5e2254e90c" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Faire" sap:VirtualizedContainerService.HintSize="722,565" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Faire" sap:VirtualizedContainerService.HintSize="722,525" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Simulation de'" sap:VirtualizedContainerService.HintSize="680,471" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="0efc2c56-42e4-4a63-b7a5-aa5e2254e90c" Version="V1">
+            <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Simulation de'" sap:VirtualizedContainerService.HintSize="680,431" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="0efc2c56-42e4-4a63-b7a5-aa5e2254e90c" Version="V1">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="La cible apparaît" sap:VirtualizedContainerService.HintSize="376,215" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>
@@ -111,13 +123,13 @@
                 </Sequence>
               </uix:NCheckState.IfExists>
               <uix:NCheckState.IfNotExists>
-                <Sequence DisplayName="La cible n'apparaît pas" sap:VirtualizedContainerService.HintSize="242,116" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="La cible n'apparaît pas" sap:VirtualizedContainerService.HintSize="250,116" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Throw Exception="[new Exception(&quot;hellopret.com Not Found&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                  <Throw Exception="[new Exception(&quot;hellopret.com Not Found&quot;)]" sap:VirtualizedContainerService.HintSize="208,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
                 </Sequence>
               </uix:NCheckState.IfNotExists>
               <uix:NCheckState.Target>
@@ -128,7 +140,7 @@
         </ActivityAction>
       </uix:NApplicationCard.Body>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="1912, -8, 1936, 1056" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAABgWlDQ1BJQ0MgUHJvZmlsZQAAKM+VkU8oBFEcxz87iESSPUgOc8CJEpIjS0lR21q1i4OZWbvUzthmdnNxVK7KwZ+LfwcXZ64Orkopf0pOjk7ERRq/N6t2U6u8er1P3/e+3977PtAOspbtVfeC7eTd2HhETyRn9dpnNMLUA82G5eVGotFJKo6PW0JqvelRWfxvNKYWPQtCuvCwlXPzwgvCg6v5nOId4bC1ZKSET4W7Xbmg8L3SzSK/KM4ErKnMsBuPjQqHhfVMGZtlbC25tvCAcEfKdiRfSxQ5pXhNsZ0tWD/3VC9sWHRmppUus51xJpgiio5JgWWy5OmR1RHFIyb7kQr+tsAfFZcprmUscYyxgo0R+FF/8LtbL93fV0xqiEDNk++/dULtFnxt+v7noe9/HUHVI1w4Jf/KAQy9i75Z0jr2oWkdzi5LmrkN5xvQ+pAzXCOQqmRq6TS8nsg3JaHlGurnir397HN8B3HpavIKdvegKyPZ8xXeXVfe259ngv6IfAPkrXJudz6+jwAAAAlwSFlzAAALEgAACxIB0t1+/AAAAlVJREFUSEudVruO00AUdULNN1BQU/EjFFRUhASElIYfAIke8SigQhsaHqJAImxBtQ1aim1YRMdKNAghdhPBrmFjzyvcO3fGsR3PHcfSkTW5Gc/xueeMx8myN4xhAFfdrxXbgiHAdasYmeTaWjGCNgoII7h20BEkMEm10keCDggrqBF0tSHWIqDxTKq3sQEAlsAuDcbqC+Pl5vYS4iaL9x+F1GJnr1ZvCZ4Acyl+zqUy2ewPZXTTpEYUIMHhPNdGztJiaW0ji3D2cAELE8DNfavg1+8VgTfcTSjGYUQUaEuQGaPmf5tSZHc7yxQz2SvIZ6lOBsABOqhXvmORDcgRwM4qt0hfvi12P4Hn4uhEHHyXk2199gZM80zNaGEyKUgXi+MUeoVji0xhdvnVAazJFFMiAAgl9r/KD/v5tx9Ugf2hL92p31hFVMFwRfDkFb2OVHJdfjmgonz8umtMEaDAEWSnUpXSIp6+IQK9tV0UGxFRgMnxJtt20yk0UI+e53oJdTWZluevo63JmKIEVvfH3IOXTsGzd8XkRrAEGHlsEbyLSIE7Evoj/dARqAm2iDkqIgpgZwEBJFIe/XOJTFCWuf/CE0zxZzisEQIAtQheFdQfetiSgil/ELX1AHZvcUpDUXkCMXlbTG4E74Ft0c5eLky++9k+u4u8unJXHJ9m6UKN763mN4EjoG7gg1+8Va4T9Lmby/PjWnEdcQ9KHyxu0GBp+KMmSGCSqziwdzIpZP4iRBX4ndUVHIE5UxWOajbma+EBomCyBNWOM7sM0JIgCJ+0AEdv+B+iZiN8R0R/QAAAAABJRU5ErkJggg==" InformativeScreenshot="00bd5ea039be2b5ae5cbe3d8449b4546.png" Selector="&lt;html app='chrome.exe' title='Simulez votre prêt immobilier - Simulateur crédit immobilier' /&gt;" Url="[in_urlSite]" />
+        <uix:TargetApp Area="1912, -8, 1936, 1056" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAABgWlDQ1BJQ0MgUHJvZmlsZQAAKM+VkU8oBFEcxz87iESSPUgOc8CJEpIjS0lR21q1i4OZWbvUzthmdnNxVK7KwZ+LfwcXZ64Orkopf0pOjk7ERRq/N6t2U6u8er1P3/e+3977PtAOspbtVfeC7eTd2HhETyRn9dpnNMLUA82G5eVGotFJKo6PW0JqvelRWfxvNKYWPQtCuvCwlXPzwgvCg6v5nOId4bC1ZKSET4W7Xbmg8L3SzSK/KM4ErKnMsBuPjQqHhfVMGZtlbC25tvCAcEfKdiRfSxQ5pXhNsZ0tWD/3VC9sWHRmppUus51xJpgiio5JgWWy5OmR1RHFIyb7kQr+tsAfFZcprmUscYyxgo0R+FF/8LtbL93fV0xqiEDNk++/dULtFnxt+v7noe9/HUHVI1w4Jf/KAQy9i75Z0jr2oWkdzi5LmrkN5xvQ+pAzXCOQqmRq6TS8nsg3JaHlGurnir397HN8B3HpavIKdvegKyPZ8xXeXVfe259ngv6IfAPkrXJudz6+jwAAAAlwSFlzAAALEgAACxIB0t1+/AAAAlVJREFUSEudVruO00AUdULNN1BQU/EjFFRUhASElIYfAIke8SigQhsaHqJAImxBtQ1aim1YRMdKNAghdhPBrmFjzyvcO3fGsR3PHcfSkTW5Gc/xueeMx8myN4xhAFfdrxXbgiHAdasYmeTaWjGCNgoII7h20BEkMEm10keCDggrqBF0tSHWIqDxTKq3sQEAlsAuDcbqC+Pl5vYS4iaL9x+F1GJnr1ZvCZ4Acyl+zqUy2ewPZXTTpEYUIMHhPNdGztJiaW0ji3D2cAELE8DNfavg1+8VgTfcTSjGYUQUaEuQGaPmf5tSZHc7yxQz2SvIZ6lOBsABOqhXvmORDcgRwM4qt0hfvi12P4Hn4uhEHHyXk2199gZM80zNaGEyKUgXi+MUeoVji0xhdvnVAazJFFMiAAgl9r/KD/v5tx9Ugf2hL92p31hFVMFwRfDkFb2OVHJdfjmgonz8umtMEaDAEWSnUpXSIp6+IQK9tV0UGxFRgMnxJtt20yk0UI+e53oJdTWZluevo63JmKIEVvfH3IOXTsGzd8XkRrAEGHlsEbyLSIE7Evoj/dARqAm2iDkqIgpgZwEBJFIe/XOJTFCWuf/CE0zxZzisEQIAtQheFdQfetiSgil/ELX1AHZvcUpDUXkCMXlbTG4E74Ft0c5eLky++9k+u4u8unJXHJ9m6UKN763mN4EjoG7gg1+8Va4T9Lmby/PjWnEdcQ9KHyxu0GBp+KMmSGCSqziwdzIpZP4iRBX4ndUVHIE5UxWOajbma+EBomCyBNWOM7sM0JIgCJ+0AEdv+B+iZiN8R0R/QAAAAABJRU5ErkJggg==" InformativeScreenshot="00bd5ea039be2b5ae5cbe3d8449b4546.png" Selector="&lt;html app='chrome.exe' title='Simulez votre prêt immobilier - Simulateur crédit immobilier' /&gt;" Url="[url_helloPret]" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="756,121" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;fin ouverture hellopret&quot;]" />
