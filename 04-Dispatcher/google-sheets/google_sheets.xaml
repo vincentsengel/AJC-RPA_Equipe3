@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1794,1529</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1254,2798</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="68">
@@ -94,23 +94,19 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="1191,1464" sap2010:WorkflowViewState.IdRef="Sequence_6">
+  <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="1191,2733" sap2010:WorkflowViewState.IdRef="Sequence_6">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ugas:GoogleSheetsApplicationScope ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" FileId="{x:Null}" ParentFolderId="{x:Null}" ParentFolderPath="{x:Null}" Timeout="{x:Null}" Account="vincent.sengel@gmail.com" Action="UseExisting" DisplayName="Use Google Spreadsheet" Filename="research-criterias" sap:VirtualizedContainerService.HintSize="1149,1372" sap2010:WorkflowViewState.IdRef="GoogleSheetsApplicationScope_3" Mode="Browse" SpreadsheetId="1OGdYPU9ct6L5tfNgePyaXi-PT7TnfJO0UNY0I_cg-Ak" SpreadsheetName="criteria_sheet" UseConnectionService="False" UserEmail="vincent.sengel@gmail.com">
+    <ugas:GoogleSheetsApplicationScope ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" FileId="{x:Null}" ParentFolderId="{x:Null}" ParentFolderPath="{x:Null}" Timeout="{x:Null}" Account="vincent.sengel@gmail.com" Action="UseExisting" DisplayName="Use Google Spreadsheet" Filename="research-criterias" sap:VirtualizedContainerService.HintSize="1149,2641" sap2010:WorkflowViewState.IdRef="GoogleSheetsApplicationScope_3" Mode="Browse" SpreadsheetId="1OGdYPU9ct6L5tfNgePyaXi-PT7TnfJO0UNY0I_cg-Ak" SpreadsheetName="criteria_sheet" UseConnectionService="False" UserEmail="vincent.sengel@gmail.com">
       <ugas:GoogleSheetsApplicationScope.Body>
         <ActivityAction x:TypeArguments="ugas:IGoogleSheetTarget">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ugas:IGoogleSheetTarget" Name="Spreadsheet" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1115,1091" sap2010:WorkflowViewState.IdRef="Sequence_5">
-            <Sequence.Variables>
-              <Variable x:TypeArguments="sd:DataTable" Name="OUT_tableCriteres" />
-              <Variable x:TypeArguments="x:String" Name="temp" />
-            </Sequence.Variables>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1115,2360" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -149,6 +145,121 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <ui:UpdateRowItem ColumnName="{x:Null}" ColumnIndex="5" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="434,190" sap2010:WorkflowViewState.IdRef="UpdateRowItem_2" Row="[CurrentRow]" Value="[False]" />
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ForEachRow>
+            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1073,317" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+              <ui:MultipleAssign.AssignOperations>
+                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[OUT_tableCriteres.Columns("TYPE").ColumnName]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">realEstateObject</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[OUT_tableCriteres.Columns("LIEU").ColumnName]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">locationResearch</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[OUT_tableCriteres.Columns("BUDGET").ColumnName]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">budgetResearch</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[OUT_tableCriteres.Columns("SURFACE").ColumnName]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">surfaceResearch</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[OUT_tableCriteres.Columns("TYPE_ACHAT").ColumnName]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">typeResearch</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[OUT_tableCriteres.Columns("NOMBRE_EMPRUNTEUR").ColumnName]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">buyAlone_str</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[OUT_tableCriteres.Columns("DUREE_MAX").ColumnName]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">maximumLoanDuration</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[OUT_tableCriteres.Columns("REVENUS_MENSUEL").ColumnName]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">monthlyIncomes</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                </scg:List>
+              </ui:MultipleAssign.AssignOperations>
+            </ui:MultipleAssign>
+            <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="buyAlone" DataTable="[OUT_tableCriteres]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="1073,185" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[OUT_tableCriteres]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1073,647" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1039,532" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If Condition="[CurrentRow(&quot;buyAlone_str&quot;).Equals(&quot;seul&quot;)]" sap:VirtualizedContainerService.HintSize="997,440" sap2010:WorkflowViewState.IdRef="If_2">
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="476,282" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="buyAlone" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="434,190" sap2010:WorkflowViewState.IdRef="UpdateRowItem_3" Row="[CurrentRow]" Value="[True]" />
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="476,282" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="buyAlone" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="434,190" sap2010:WorkflowViewState.IdRef="UpdateRowItem_4" Row="[CurrentRow]" Value="[False]" />
                         </Sequence>
                       </If.Else>
                     </If>
