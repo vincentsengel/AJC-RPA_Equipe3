@@ -6,6 +6,8 @@
     <x:Property Name="io_dt_errorReport" Type="InOutArgument(sd:DataTable)" />
     <x:Property Name="in_transactionNumber" Type="InArgument(x:Int32)" />
     <x:Property Name="in_str_batchName" Type="InArgument(x:String)" />
+    <x:Property Name="in_str_reportFileName" Type="InArgument(x:String)" />
+    <x:Property Name="in_str_reportFileID" Type="InArgument(x:String)" />
   </x:Members>
   <this:Process.in_str_batchName>
     <InArgument x:TypeArguments="x:String" />
@@ -13,7 +15,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>909,970</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1208,970</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -126,6 +128,12 @@
             </InArgument>
             <InArgument x:TypeArguments="x:String" x:Key="batchName">
               <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_str_batchName" />
+            </InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="reportFileName">
+              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_str_reportFileName" />
+            </InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="reportFileID">
+              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_str_reportFileID" />
             </InArgument>
           </ui:AddQueueItem.ItemInformation>
         </ui:AddQueueItem>
