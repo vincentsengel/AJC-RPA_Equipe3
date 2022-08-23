@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ouvertureSiteSeLoger" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="956,1796" sap2010:WorkflowViewState.IdRef="ouvertureSiteSeLoger_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ouvertureSiteSeLoger" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="956,1716" sap2010:WorkflowViewState.IdRef="ouvertureSiteSeLoger_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="34">
       <x:String>System.Activities</x:String>
@@ -73,7 +73,7 @@
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ouvertureSiteSeLoger" sap:VirtualizedContainerService.HintSize="966,1731" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ouvertureSiteSeLoger" sap:VirtualizedContainerService.HintSize="966,1651" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="url_seLoger" />
     </Sequence.Variables>
@@ -88,19 +88,19 @@
         <OutArgument x:TypeArguments="x:String">[url_seLoger]</OutArgument>
       </ui:GetRobotAsset.Value>
     </ui:GetRobotAsset>
-    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" ContinueOnError="False" DisplayName="Use Browser Chrome: Petites annonces immobilières | 1er site immobilier français | Portail immo" sap:VirtualizedContainerService.HintSize="924,1301" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="6cc10d29-c6b4-4014-916c-2d799a089ae8" Version="V2">
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" ContinueOnError="False" DisplayName="Use Browser Chrome: Petites annonces immobilières | 1er site immobilier français | Portail immo" sap:VirtualizedContainerService.HintSize="924,1221" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="6cc10d29-c6b4-4014-916c-2d799a089ae8" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Faire" sap:VirtualizedContainerService.HintSize="890,1085" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Faire" sap:VirtualizedContainerService.HintSize="890,1005" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:RetryScope ContinueOnError="False" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="848,991" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3">
+            <ui:RetryScope ContinueOnError="False" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="848,911" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
                   <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="376,321" sap2010:WorkflowViewState.IdRef="Sequence_5">
@@ -109,7 +109,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="334,81" sap2010:WorkflowViewState.IdRef="NGoToUrl_2" Url="https://www.seloger.com/" Version="V1" />
+                    <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="334,81" sap2010:WorkflowViewState.IdRef="NGoToUrl_2" Url="[url_seLoger]" Version="V1" />
                     <uix:NCheckState Exists="{x:Null}" sap2010:Annotation.AnnotationText="Si une recherche a été lancée, clique sur 'nouvelle recherche'" DisplayName="Check App State 'Nouvelle recherche'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="334,108" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="6cc10d29-c6b4-4014-916c-2d799a089ae8" Version="V1">
                       <uix:NCheckState.IfExists>
                         <Sequence DisplayName="La cible apparaît" sap:VirtualizedContainerService.HintSize="376,411" sap2010:WorkflowViewState.IdRef="Sequence_6">
