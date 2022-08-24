@@ -773,7 +773,7 @@
           "lib/net461/Microsoft.IdentityModel.Tokens.dll": {}
         }
       },
-      "Microsoft.Rest.ClientRuntime/2.3.21": {
+      "Microsoft.Rest.ClientRuntime/2.3.23": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "10.0.3"
@@ -1239,6 +1239,25 @@
           "lib/net461/System.Reflection.Metadata.dll": {}
         }
       },
+      "System.Resources.Extensions/5.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.4"
+        },
+        "frameworkAssemblies": [
+          "System",
+          "mscorlib"
+        ],
+        "compile": {
+          "lib/net461/_._": {}
+        },
+        "runtime": {
+          "lib/net461/System.Resources.Extensions.dll": {}
+        },
+        "build": {
+          "build/net461/_._": {}
+        }
+      },
       "System.Runtime.Caching/5.0.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -1578,6 +1597,18 @@
           "lib/net461/zh-CN/UiPath.Excel.resources.dll": {
             "locale": "zh-CN"
           }
+        }
+      },
+      "UiPath.FormActivityLibrary.Contracts/1.9.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Resources.Extensions": "5.0.0"
+        },
+        "compile": {
+          "lib/net461/_._": {}
+        },
+        "runtime": {
+          "lib/net461/UiPath.Form.ActivityLibrary.Contracts.dll": {}
         }
       },
       "UiPath.GSuite.Activities/1.16.2": {
@@ -1954,6 +1985,92 @@
         },
         "runtime": {
           "lib/net461/UiPath.OCR.Contracts.dll": {}
+        }
+      },
+      "UiPath.Persistence.Activities/1.4.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Rest.ClientRuntime": "2.3.23",
+          "Newtonsoft.Json": "11.0.2",
+          "UiPath.FormActivityLibrary.Contracts": "1.9.2",
+          "UiPath.Telemetry.Client": "1.5.3"
+        },
+        "compile": {
+          "lib/net461/_._": {}
+        },
+        "runtime": {
+          "lib/net461/UiPath.Orchestrator.Service.dll": {},
+          "lib/net461/UiPath.Persistence.Activities.Design.dll": {},
+          "lib/net461/UiPath.Persistence.Activities.dll": {},
+          "lib/net461/UiPath.Persistence.Orchestrator.Client.dll": {}
+        },
+        "resource": {
+          "lib/net461/de/UiPath.Persistence.Activities.Design.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net461/de/UiPath.Persistence.Activities.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net461/es-MX/UiPath.Persistence.Activities.Design.resources.dll": {
+            "locale": "es-MX"
+          },
+          "lib/net461/es-MX/UiPath.Persistence.Activities.resources.dll": {
+            "locale": "es-MX"
+          },
+          "lib/net461/es/UiPath.Persistence.Activities.Design.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net461/es/UiPath.Persistence.Activities.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net461/fr/UiPath.Persistence.Activities.Design.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net461/fr/UiPath.Persistence.Activities.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net461/ja/UiPath.Persistence.Activities.Design.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net461/ja/UiPath.Persistence.Activities.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net461/ko/UiPath.Persistence.Activities.Design.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net461/ko/UiPath.Persistence.Activities.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net461/pt-BR/UiPath.Persistence.Activities.Design.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net461/pt-BR/UiPath.Persistence.Activities.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net461/pt/UiPath.Persistence.Activities.Design.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net461/pt/UiPath.Persistence.Activities.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net461/ru/UiPath.Persistence.Activities.Design.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net461/ru/UiPath.Persistence.Activities.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net461/tr/UiPath.Persistence.Activities.Design.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net461/tr/UiPath.Persistence.Activities.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net461/zh-CN/UiPath.Persistence.Activities.Design.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net461/zh-CN/UiPath.Persistence.Activities.resources.dll": {
+            "locale": "zh-CN"
+          }
         }
       },
       "UiPath.Platform/22.4.1": {
@@ -3357,7 +3474,7 @@
           "lib/net461/Microsoft.IdentityModel.Tokens.dll": {}
         }
       },
-      "Microsoft.Rest.ClientRuntime/2.3.21": {
+      "Microsoft.Rest.ClientRuntime/2.3.23": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "10.0.3"
@@ -3820,6 +3937,25 @@
           "lib/net461/System.Reflection.Metadata.dll": {}
         }
       },
+      "System.Resources.Extensions/5.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.4"
+        },
+        "frameworkAssemblies": [
+          "System",
+          "mscorlib"
+        ],
+        "compile": {
+          "lib/net461/_._": {}
+        },
+        "runtime": {
+          "lib/net461/System.Resources.Extensions.dll": {}
+        },
+        "build": {
+          "build/net461/_._": {}
+        }
+      },
       "System.Runtime.Caching/5.0.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -4147,6 +4283,18 @@
           "lib/net461/zh-CN/UiPath.Excel.resources.dll": {
             "locale": "zh-CN"
           }
+        }
+      },
+      "UiPath.FormActivityLibrary.Contracts/1.9.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Resources.Extensions": "5.0.0"
+        },
+        "compile": {
+          "lib/net461/_._": {}
+        },
+        "runtime": {
+          "lib/net461/UiPath.Form.ActivityLibrary.Contracts.dll": {}
         }
       },
       "UiPath.GSuite.Activities/1.16.2": {
@@ -4523,6 +4671,92 @@
         },
         "runtime": {
           "lib/net461/UiPath.OCR.Contracts.dll": {}
+        }
+      },
+      "UiPath.Persistence.Activities/1.4.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Rest.ClientRuntime": "2.3.23",
+          "Newtonsoft.Json": "11.0.2",
+          "UiPath.FormActivityLibrary.Contracts": "1.9.2",
+          "UiPath.Telemetry.Client": "1.5.3"
+        },
+        "compile": {
+          "lib/net461/_._": {}
+        },
+        "runtime": {
+          "lib/net461/UiPath.Orchestrator.Service.dll": {},
+          "lib/net461/UiPath.Persistence.Activities.Design.dll": {},
+          "lib/net461/UiPath.Persistence.Activities.dll": {},
+          "lib/net461/UiPath.Persistence.Orchestrator.Client.dll": {}
+        },
+        "resource": {
+          "lib/net461/de/UiPath.Persistence.Activities.Design.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net461/de/UiPath.Persistence.Activities.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net461/es-MX/UiPath.Persistence.Activities.Design.resources.dll": {
+            "locale": "es-MX"
+          },
+          "lib/net461/es-MX/UiPath.Persistence.Activities.resources.dll": {
+            "locale": "es-MX"
+          },
+          "lib/net461/es/UiPath.Persistence.Activities.Design.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net461/es/UiPath.Persistence.Activities.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net461/fr/UiPath.Persistence.Activities.Design.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net461/fr/UiPath.Persistence.Activities.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net461/ja/UiPath.Persistence.Activities.Design.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net461/ja/UiPath.Persistence.Activities.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net461/ko/UiPath.Persistence.Activities.Design.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net461/ko/UiPath.Persistence.Activities.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net461/pt-BR/UiPath.Persistence.Activities.Design.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net461/pt-BR/UiPath.Persistence.Activities.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net461/pt/UiPath.Persistence.Activities.Design.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net461/pt/UiPath.Persistence.Activities.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net461/ru/UiPath.Persistence.Activities.Design.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net461/ru/UiPath.Persistence.Activities.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net461/tr/UiPath.Persistence.Activities.Design.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net461/tr/UiPath.Persistence.Activities.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net461/zh-CN/UiPath.Persistence.Activities.Design.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net461/zh-CN/UiPath.Persistence.Activities.resources.dll": {
+            "locale": "zh-CN"
+          }
         }
       },
       "UiPath.Platform/22.4.1": {
@@ -6362,10 +6596,10 @@
         "microsoft.identitymodel.tokens.nuspec"
       ]
     },
-    "Microsoft.Rest.ClientRuntime/2.3.21": {
-      "sha512": "KDYlgTyO693V6pi6SGk9eg+dDvKjuOgmkapbHdpnB1SmTPKpvWxVLIMyARJsCFLfB6axyURUJHOfvxBQ0yJKeg==",
+    "Microsoft.Rest.ClientRuntime/2.3.23": {
+      "sha512": "92kNTi1N7zI5wwI2ZXswBRnk61OUYnuYJXrlgOhes5IsAqGmgw9DPGmhUzeY8OaZ8TTrQdDzvgXFnbCHwLzSVA==",
       "type": "package",
-      "path": "microsoft.rest.clientruntime/2.3.21",
+      "path": "microsoft.rest.clientruntime/2.3.23",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -6377,7 +6611,7 @@
         "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.runtimeconfig.json",
         "lib/netstandard2.0/Microsoft.Rest.ClientRuntime.dll",
         "lib/netstandard2.0/Microsoft.Rest.ClientRuntime.runtimeconfig.json",
-        "microsoft.rest.clientruntime.2.3.21.nupkg.sha512",
+        "microsoft.rest.clientruntime.2.3.23.nupkg.sha512",
         "microsoft.rest.clientruntime.nuspec"
       ]
     },
@@ -7402,6 +7636,27 @@
         "version.txt"
       ]
     },
+    "System.Resources.Extensions/5.0.0": {
+      "sha512": "KBiqY/+W6hWVwucHBHO76JkgBGyawlxCcP946MhK8dNjalaBgZkyHaux8ko58PENTqQHHjoDa7cfIkAchfJPPA==",
+      "type": "package",
+      "path": "system.resources.extensions/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "build/net461/System.Resources.Extensions.targets",
+        "lib/net461/System.Resources.Extensions.dll",
+        "lib/net461/System.Resources.Extensions.xml",
+        "lib/netstandard2.0/System.Resources.Extensions.dll",
+        "lib/netstandard2.0/System.Resources.Extensions.xml",
+        "system.resources.extensions.5.0.0.nupkg.sha512",
+        "system.resources.extensions.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Runtime.Caching/5.0.0": {
       "sha512": "30D6MkO8WF9jVGWZIP0hmCN8l9BTY4LCsAzLIe4xFSXzs+AjDotR7DpSmj27pFskDURzUvqYYY0ikModgBTxWw==",
       "type": "package",
@@ -8026,6 +8281,20 @@
         "lib/net5.0/zh-CN/UiPath.Excel.resources.dll",
         "uipath.excel.activities.2.12.3.nupkg.sha512",
         "uipath.excel.activities.nuspec"
+      ]
+    },
+    "UiPath.FormActivityLibrary.Contracts/1.9.2": {
+      "sha512": "Cnfx5SwiA/DHYRByfkCD0FR5jYQMaQEaPQGIbP2Z/9uVd7MO8+cMAQF3+DRkyqvkBl9akIMCDU4tj+3TByQi4A==",
+      "type": "package",
+      "path": "uipath.formactivitylibrary.contracts/1.9.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net461/UiPath.Form.ActivityLibrary.Contracts.dll",
+        "lib/net5.0-windows7.0/UiPath.Form.ActivityLibrary.Contracts.dll",
+        "lib/net5.0/UiPath.Form.ActivityLibrary.Contracts.dll",
+        "uipath.formactivitylibrary.contracts.1.9.2.nupkg.sha512",
+        "uipath.formactivitylibrary.contracts.nuspec"
       ]
     },
     "UiPath.GSuite.Activities/1.16.2": {
@@ -8774,6 +9043,82 @@
         "lib/net5.0/UiPath.OCR.Contracts.xml",
         "uipath.ocr.contracts.2.11.0.nupkg.sha512",
         "uipath.ocr.contracts.nuspec"
+      ]
+    },
+    "UiPath.Persistence.Activities/1.4.1": {
+      "sha512": "EgkZEX8XFTK9XNxcn2KbCa3hz/U9arGtwXBDL5J6tfK3hzu5qvrheuz2rqrr2uL9dHORWgD//5cOuCYYsqFaZg==",
+      "type": "package",
+      "path": "uipath.persistence.activities/1.4.1",
+      "files": [
+        ".nupkg.metadata",
+        "lib/net461/UiPath.Orchestrator.Service.dll",
+        "lib/net461/UiPath.Persistence.Activities.Design.dll",
+        "lib/net461/UiPath.Persistence.Activities.dll",
+        "lib/net461/UiPath.Persistence.Orchestrator.Client.dll",
+        "lib/net461/de/UiPath.Persistence.Activities.Design.resources.dll",
+        "lib/net461/de/UiPath.Persistence.Activities.resources.dll",
+        "lib/net461/es-MX/UiPath.Persistence.Activities.Design.resources.dll",
+        "lib/net461/es-MX/UiPath.Persistence.Activities.resources.dll",
+        "lib/net461/es/UiPath.Persistence.Activities.Design.resources.dll",
+        "lib/net461/es/UiPath.Persistence.Activities.resources.dll",
+        "lib/net461/fr/UiPath.Persistence.Activities.Design.resources.dll",
+        "lib/net461/fr/UiPath.Persistence.Activities.resources.dll",
+        "lib/net461/ja/UiPath.Persistence.Activities.Design.resources.dll",
+        "lib/net461/ja/UiPath.Persistence.Activities.resources.dll",
+        "lib/net461/ko/UiPath.Persistence.Activities.Design.resources.dll",
+        "lib/net461/ko/UiPath.Persistence.Activities.resources.dll",
+        "lib/net461/pt-BR/UiPath.Persistence.Activities.Design.resources.dll",
+        "lib/net461/pt-BR/UiPath.Persistence.Activities.resources.dll",
+        "lib/net461/pt/UiPath.Persistence.Activities.Design.resources.dll",
+        "lib/net461/pt/UiPath.Persistence.Activities.resources.dll",
+        "lib/net461/ru/UiPath.Persistence.Activities.Design.resources.dll",
+        "lib/net461/ru/UiPath.Persistence.Activities.resources.dll",
+        "lib/net461/tr/UiPath.Persistence.Activities.Design.resources.dll",
+        "lib/net461/tr/UiPath.Persistence.Activities.resources.dll",
+        "lib/net461/zh-CN/UiPath.Persistence.Activities.Design.resources.dll",
+        "lib/net461/zh-CN/UiPath.Persistence.Activities.resources.dll",
+        "lib/net5.0-windows7.0/UiPath.Orchestrator.Service.dll",
+        "lib/net5.0-windows7.0/UiPath.Persistence.Activities.Design.dll",
+        "lib/net5.0-windows7.0/UiPath.Persistence.Activities.dll",
+        "lib/net5.0-windows7.0/UiPath.Persistence.Orchestrator.Client.dll",
+        "lib/net5.0-windows7.0/de/UiPath.Persistence.Activities.Design.resources.dll",
+        "lib/net5.0-windows7.0/de/UiPath.Persistence.Activities.resources.dll",
+        "lib/net5.0-windows7.0/es-MX/UiPath.Persistence.Activities.Design.resources.dll",
+        "lib/net5.0-windows7.0/es-MX/UiPath.Persistence.Activities.resources.dll",
+        "lib/net5.0-windows7.0/es/UiPath.Persistence.Activities.Design.resources.dll",
+        "lib/net5.0-windows7.0/es/UiPath.Persistence.Activities.resources.dll",
+        "lib/net5.0-windows7.0/fr/UiPath.Persistence.Activities.Design.resources.dll",
+        "lib/net5.0-windows7.0/fr/UiPath.Persistence.Activities.resources.dll",
+        "lib/net5.0-windows7.0/ja/UiPath.Persistence.Activities.Design.resources.dll",
+        "lib/net5.0-windows7.0/ja/UiPath.Persistence.Activities.resources.dll",
+        "lib/net5.0-windows7.0/ko/UiPath.Persistence.Activities.Design.resources.dll",
+        "lib/net5.0-windows7.0/ko/UiPath.Persistence.Activities.resources.dll",
+        "lib/net5.0-windows7.0/pt-BR/UiPath.Persistence.Activities.Design.resources.dll",
+        "lib/net5.0-windows7.0/pt-BR/UiPath.Persistence.Activities.resources.dll",
+        "lib/net5.0-windows7.0/pt/UiPath.Persistence.Activities.Design.resources.dll",
+        "lib/net5.0-windows7.0/pt/UiPath.Persistence.Activities.resources.dll",
+        "lib/net5.0-windows7.0/ru/UiPath.Persistence.Activities.Design.resources.dll",
+        "lib/net5.0-windows7.0/ru/UiPath.Persistence.Activities.resources.dll",
+        "lib/net5.0-windows7.0/tr/UiPath.Persistence.Activities.Design.resources.dll",
+        "lib/net5.0-windows7.0/tr/UiPath.Persistence.Activities.resources.dll",
+        "lib/net5.0-windows7.0/zh-CN/UiPath.Persistence.Activities.Design.resources.dll",
+        "lib/net5.0-windows7.0/zh-CN/UiPath.Persistence.Activities.resources.dll",
+        "lib/net5.0/UiPath.Orchestrator.Service.dll",
+        "lib/net5.0/UiPath.Persistence.Activities.dll",
+        "lib/net5.0/UiPath.Persistence.Orchestrator.Client.dll",
+        "lib/net5.0/de/UiPath.Persistence.Activities.resources.dll",
+        "lib/net5.0/es-MX/UiPath.Persistence.Activities.resources.dll",
+        "lib/net5.0/es/UiPath.Persistence.Activities.resources.dll",
+        "lib/net5.0/fr/UiPath.Persistence.Activities.resources.dll",
+        "lib/net5.0/ja/UiPath.Persistence.Activities.resources.dll",
+        "lib/net5.0/ko/UiPath.Persistence.Activities.resources.dll",
+        "lib/net5.0/pt-BR/UiPath.Persistence.Activities.resources.dll",
+        "lib/net5.0/pt/UiPath.Persistence.Activities.resources.dll",
+        "lib/net5.0/ru/UiPath.Persistence.Activities.resources.dll",
+        "lib/net5.0/tr/UiPath.Persistence.Activities.resources.dll",
+        "lib/net5.0/zh-CN/UiPath.Persistence.Activities.resources.dll",
+        "uipath.persistence.activities.1.4.1.nupkg.sha512",
+        "uipath.persistence.activities.nuspec"
       ]
     },
     "UiPath.Platform/22.4.1": {
@@ -9540,21 +9885,22 @@
       "UiPath.Excel.Activities >= 2.12.3 <= 2.12.3",
       "UiPath.GSuite.Activities >= 1.16.2 <= 1.16.2",
       "UiPath.Mail.Activities >= 1.15.2 <= 1.15.2",
+      "UiPath.Persistence.Activities >= 1.4.1 <= 1.4.1",
       "UiPath.System.Activities >= 22.4.4 <= 22.4.4",
       "UiPath.Testing.Activities >= 22.4.3 <= 22.4.3",
       "UiPath.UIAutomation.Activities >= 22.4.7 <= 22.4.7"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Megaport\\.nuget\\packages\\": {}
+    "C:\\Users\\VirtualBox\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "Performer",
       "projectName": "Performer",
-      "projectPath": "C:\\Users\\Megaport\\Documents\\UiPath\\AJC-RPA_Equipe3-master\\05-Performer\\.local",
-      "packagesPath": "C:\\Users\\Megaport\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Megaport\\Documents\\UiPath\\AJC-RPA_Equipe3-master\\05-Performer\\.local"
+      "projectPath": "C:\\Users\\VirtualBox\\Documents\\GitHub\\AJC-RPA_Equipe3\\05-Performer\\.local",
+      "packagesPath": "C:\\Users\\VirtualBox\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\VirtualBox\\Documents\\GitHub\\AJC-RPA_Equipe3\\05-Performer\\.local"
     },
     "frameworks": {
       "net461": {
@@ -9574,6 +9920,11 @@
             "target": "Package",
             "version": "[1.15.2, 1.15.2]"
           },
+          "UiPath.Persistence.Activities": {
+            "include": "Runtime",
+            "target": "Package",
+            "version": "[1.4.1, 1.4.1]"
+          },
           "UiPath.System.Activities": {
             "include": "Runtime",
             "target": "Package",
@@ -9590,7 +9941,7 @@
             "version": "[22.4.7, 22.4.7]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\Megaport\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\VirtualBox\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
       }
     },
     "runtimes": {
