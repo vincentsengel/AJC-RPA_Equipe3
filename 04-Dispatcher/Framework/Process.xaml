@@ -15,7 +15,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,970</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>903,970</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -84,6 +84,7 @@
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>System.Data.Entity</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="480,905" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -97,44 +98,20 @@
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438,121" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Ajout dans Queue Item&quot;]" />
     <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,309" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="jobQueue">
+        <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="jobQueue" Reference="[in_str_reportFileName +&quot;_&quot; + in_transactionNumber.ToString]">
           <ui:AddQueueItem.ItemInformation>
-            <InArgument x:TypeArguments="x:String" x:Key="realEstateObject">
-              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem(&quot;realEstateObject&quot;).ToString" />
-            </InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="locationResearch">
-              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem(&quot;locationResearch&quot;).ToString" />
-            </InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="budgetResearch">
-              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem(&quot;budgetResearch&quot;).ToString" />
-            </InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="surfaceResearch">
-              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem(&quot;surfaceResearch&quot;).ToString" />
-            </InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="typeResearch">
-              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem(&quot;typeResearch&quot;).ToString" />
-            </InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="buyAlone">
-              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem(&quot;buyAlone&quot;).ToString" />
-            </InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="maximumLoanDuration">
-              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem(&quot;maximumLoanDuration&quot;).ToString" />
-            </InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="monthlyIncomes">
-              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem(&quot;monthlyIncomes&quot;).ToString" />
-            </InArgument>
-            <InArgument x:TypeArguments="x:Int32" x:Key="lineNumber">
-              <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="Cint(in_transactionNumber) + 2" />
-            </InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="batchName">
-              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_str_batchName" />
-            </InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="reportFileName">
-              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_str_reportFileName" />
-            </InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="reportFileID">
-              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_str_reportFileID" />
-            </InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="realEstateObject">[in_TransactionItem("realEstateObject").ToString]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="locationResearch">[in_TransactionItem("locationResearch").ToString]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="budgetResearch">[in_TransactionItem("budgetResearch").ToString]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="surfaceResearch">[in_TransactionItem("surfaceResearch").ToString]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="typeResearch">[in_TransactionItem("typeResearch").ToString]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="buyAlone">[in_TransactionItem("buyAlone").ToString]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="maximumLoanDuration">[in_TransactionItem("maximumLoanDuration").ToString]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="monthlyIncomes">[in_TransactionItem("monthlyIncomes").ToString]</InArgument>
+            <InArgument x:TypeArguments="x:Int32" x:Key="lineNumber">[Cint(in_transactionNumber) + 2]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="batchName">[in_str_batchName]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="reportFileName">[in_str_reportFileName]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="reportFileID">[in_str_reportFileID]</InArgument>
           </ui:AddQueueItem.ItemInformation>
         </ui:AddQueueItem>
       </TryCatch.Try>

@@ -18,7 +18,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>909,1784</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>592,1744</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GenerationRapport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="38">
@@ -94,16 +94,15 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GenerationRapport" sap:VirtualizedContainerService.HintSize="602,1719" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GenerationRapport" sap:VirtualizedContainerService.HintSize="602,1679" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ugad:GoogleDocsApplicationScope ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" DocumentName="{x:Null}" FileId="{x:Null}" Timeout="{x:Null}" Account="rpatest78@gmail.com" Action="UseExisting" DisplayName="Use Google Document" DocumentId="[in_str_rapportFileID]" Filename="[in_str_reportFileName]" sap:VirtualizedContainerService.HintSize="560,1627" sap2010:WorkflowViewState.IdRef="GoogleDocsApplicationScope_1" Mode="EnterId" ParentFolderId="1rfOGF6o19WyX6c428I_8EsyjePg587-w" ParentFolderPath="Mon Drive&gt;Rapports" UseConnectionService="False" UserEmail="rpatest78@gmail.com">
+    <ugad:GoogleDocsApplicationScope ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" DocumentName="{x:Null}" FileId="{x:Null}" Timeout="{x:Null}" Account="rpatest78@gmail.com" Action="UseExisting" DisplayName="Use Google Document" DocumentId="[in_str_rapportFileID]" Filename="[in_str_reportFileName]" sap:VirtualizedContainerService.HintSize="560,1587" sap2010:WorkflowViewState.IdRef="GoogleDocsApplicationScope_1" Mode="EnterId" ParentFolderId="1rfOGF6o19WyX6c428I_8EsyjePg587-w" ParentFolderPath="Mon Drive&gt;Rapports" UseConnectionService="False" UserEmail="rpatest78@gmail.com">
       <ugad:GoogleDocsApplicationScope.Body>
         <ActivityAction x:TypeArguments="ugad:IGoogleDocTarget">
           <ActivityAction.Argument>
