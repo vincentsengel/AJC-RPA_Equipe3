@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1118,1985</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1488,3124</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>creation_rapport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -70,10 +70,9 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>System.Data.Entity</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="creation_rapport" sap:VirtualizedContainerService.HintSize="1036,1920" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="creation_rapport" sap:VirtualizedContainerService.HintSize="1427,3059" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="filtreFinancement" />
       <Variable x:TypeArguments="x:Int32" Name="i" />
@@ -83,27 +82,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="994,121" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;debut creation du rapport&quot;]" />
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="994,328" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Activités ignorées" sap:VirtualizedContainerService.HintSize="376,250" sap2010:WorkflowViewState.IdRef="Sequence_11">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:BuildDataTable DataTable="[in_dt_tableAnnonces]" DisplayName="tableAnnonces" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;objectPrice&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;adUrl&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;adReference&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;objectPrice&gt;229000&lt;/objectPrice&gt;&#xA;    &lt;adUrl&gt;https://www.seloger.com/annonces/achat/appartement/lyon-8eme-69/le-grand-trou/183864895.htm?projects=2&amp;amp;types=2,1&amp;amp;natures=1&amp;amp;places=[{%22inseeCodes%22:[690123]}]&amp;amp;price=NaN/300000&amp;amp;surface=50/NaN&amp;amp;mandatorycommodities=1&amp;amp;enterprise=0&amp;amp;student=0&amp;amp;qsVersion=1.0&amp;amp;m=search_to_detail&amp;amp;Classified-ViewId=183864895&lt;/adUrl&gt;&#xA;    &lt;adReference&gt;Ref. BDV-4683&lt;/adReference&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;objectPrice&gt;275000&lt;/objectPrice&gt;&#xA;    &lt;adUrl&gt;https://www.seloger.com/annonces/achat/appartement/lyon-5eme-69/fourviere-saint-just/189316233.htm?projects=2&amp;amp;types=2,1&amp;amp;natures=1&amp;amp;places=[{%22inseeCodes%22:[690123]}]&amp;amp;price=NaN/300000&amp;amp;surface=50/NaN&amp;amp;mandatorycommodities=1&amp;amp;enterprise=0&amp;amp;student=0&amp;amp;qsVersion=1.0&amp;amp;m=search_to_detail&amp;amp;Classified-ViewId=189316233&lt;/adUrl&gt;&#xA;    &lt;adReference&gt;Ref. 213&lt;/adReference&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;objectPrice&gt;260000&lt;/objectPrice&gt;&#xA;    &lt;adUrl&gt;https://www.seloger.com/annonces/achat-de-prestige/appartement/lyon-7eme-69/169039661.htm?projects=2&amp;amp;types=2,1&amp;amp;natures=1&amp;amp;places=[{%22inseeCodes%22:[690123]}]&amp;amp;price=NaN/300000&amp;amp;surface=50/NaN&amp;amp;mandatorycommodities=1&amp;amp;enterprise=0&amp;amp;student=0&amp;amp;qsVersion=1.0&amp;amp;m=search_to_detail&amp;amp;Classified-ViewId=169039661&lt;/adUrl&gt;&#xA;    &lt;adReference&gt;Ref. EVD4590&lt;/adReference&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
-          <ui:BuildDataTable DataTable="[in_dt_tableFinancement]" DisplayName="tableFinancement" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;loanRate&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;monthlyPayment&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;loanCost&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;AdReference&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;loanRate&gt;2.05&lt;/loanRate&gt;&#xA;    &lt;monthlyPayment&gt;1076&lt;/monthlyPayment&gt;&#xA;    &lt;loanCost&gt;70362&lt;/loanCost&gt;&#xA;    &lt;AdReference&gt;Ref. BDV-4683&lt;/AdReference&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;loanRate&gt;2.06&lt;/loanRate&gt;&#xA;    &lt;monthlyPayment&gt;1077&lt;/monthlyPayment&gt;&#xA;    &lt;loanCost&gt;70731&lt;/loanCost&gt;&#xA;    &lt;AdReference&gt;Ref. BDV-4683&lt;/AdReference&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;loanRate&gt;1.09&lt;/loanRate&gt;&#xA;    &lt;monthlyPayment&gt;1066&lt;/monthlyPayment&gt;&#xA;    &lt;loanCost&gt;60778&lt;/loanCost&gt;&#xA;    &lt;AdReference&gt;Ref. 213&lt;/AdReference&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;loanRate&gt;1.05&lt;/loanRate&gt;&#xA;    &lt;monthlyPayment&gt;1001&lt;/monthlyPayment&gt;&#xA;    &lt;loanCost&gt;61650&lt;/loanCost&gt;&#xA;    &lt;AdReference&gt;Ref. 213&lt;/AdReference&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;loanRate&gt;1.03&lt;/loanRate&gt;&#xA;    &lt;monthlyPayment&gt;1000&lt;/monthlyPayment&gt;&#xA;    &lt;loanCost&gt;60023&lt;/loanCost&gt;&#xA;    &lt;AdReference&gt;Ref. 213&lt;/AdReference&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
-        </Sequence>
-      </ui:CommentOut.Body>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:CommentOut>
-    <If Condition="[in_dt_tableAnnonces Is Nothing]" sap:VirtualizedContainerService.HintSize="994,977" sap2010:WorkflowViewState.IdRef="If_1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1385,121" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;debut creation du rapport&quot;]" />
+    <If Condition="[in_dt_tableAnnonces Is Nothing]" sap:VirtualizedContainerService.HintSize="1385,2645" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
         <Sequence sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
@@ -122,21 +102,21 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="645,819" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence sap:VirtualizedContainerService.HintSize="1036,2487" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="603,727" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+          <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="994,2395" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
             <ui:IfElseIf.ConditionBlocks>
               <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                 <ui:IfElseIfBlock BlockType="If" Condition="[in_dt_tableFinancement.RowCount()=0]">
                   <ui:IfElseIfBlock.Then>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,562" sap2010:WorkflowViewState.IdRef="Sequence_6">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
@@ -189,13 +169,13 @@
                 </ui:IfElseIfBlock>
                 <ui:IfElseIfBlock BlockType="ElseIf" Condition="[in_dt_tableFinancement.RowCount() &lt;&gt;0 and  in_dt_tableAnnonces.RowCount() &lt;&gt;0]">
                   <ui:IfElseIfBlock.Then>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,347" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="943,1519" sap2010:WorkflowViewState.IdRef="Sequence_7">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                      <Assign sap:VirtualizedContainerService.HintSize="901,60" sap2010:WorkflowViewState.IdRef="Assign_11">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Int32">[i]</OutArgument>
                         </Assign.To>
@@ -203,19 +183,19 @@
                           <InArgument x:TypeArguments="x:Int32">1</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dt_tableAnnonces]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dt_tableAnnonces]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="901,1223" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                         <ui:ForEachRow.Body>
                           <ActivityAction x:TypeArguments="sd:DataRow">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,547" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="867,1109" sap2010:WorkflowViewState.IdRef="Sequence_2">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:FilterDataTable DataTable="[in_dt_tableFinancement]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="434,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[filtreFinancement]" SelectColumnsMode="Keep">
+                              <ui:FilterDataTable DataTable="[in_dt_tableFinancement]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="825,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[filtreFinancement]" SelectColumnsMode="Keep">
                                 <ui:FilterDataTable.Filters>
                                   <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                                     <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
@@ -234,7 +214,7 @@
                                   </scg:List>
                                 </ui:FilterDataTable.SelectColumns>
                               </ui:FilterDataTable>
-                              <Assign sap:VirtualizedContainerService.HintSize="434,64" sap2010:WorkflowViewState.IdRef="Assign_1">
+                              <Assign sap:VirtualizedContainerService.HintSize="825,64" sap2010:WorkflowViewState.IdRef="Assign_1">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[out_str_emailContent]</OutArgument>
                                 </Assign.To>
@@ -245,10 +225,10 @@
 " Lien : " + CurrentRow("adUrl").ToString]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <If Condition="[filtreFinancement.RowCount()&lt;&gt;0]" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="If_2">
+                              <If Condition="[filtreFinancement.RowCount()&lt;&gt;0]" sap:VirtualizedContainerService.HintSize="825,613" sap2010:WorkflowViewState.IdRef="If_2">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
@@ -316,7 +296,7 @@
                                   </Sequence>
                                 </If.Else>
                               </If>
-                              <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                              <Assign sap:VirtualizedContainerService.HintSize="825,60" sap2010:WorkflowViewState.IdRef="Assign_10">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:Int32">[i]</OutArgument>
                                 </Assign.To>
@@ -329,12 +309,12 @@
                         </ui:ForEachRow.Body>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ForEachRow>
-                      <Assign sap:VirtualizedContainerService.HintSize="262,64" sap2010:WorkflowViewState.IdRef="Assign_2">
+                      <Assign sap:VirtualizedContainerService.HintSize="901,64" sap2010:WorkflowViewState.IdRef="Assign_2">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[out_str_emailContent]</OutArgument>
                         </Assign.To>
@@ -352,7 +332,6 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="994,121" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[out_str_emailContent]" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="994,121" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;fin creation du rapport&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1385,121" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;fin creation du rapport&quot;]" />
   </Sequence>
 </Activity>

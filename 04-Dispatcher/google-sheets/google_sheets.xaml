@@ -13,7 +13,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,1426</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1208,1225</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="68">
@@ -103,19 +103,19 @@
       <AssemblyReference>System.Data.Entity</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="587,1361" sap2010:WorkflowViewState.IdRef="Sequence_6">
+  <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="552,1160" sap2010:WorkflowViewState.IdRef="Sequence_6">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ugas:GoogleSheetsApplicationScope ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" FileId="{x:Null}" ParentFolderId="{x:Null}" ParentFolderPath="{x:Null}" Timeout="{x:Null}" Account="rpatest78@gmail.com" Action="UseExisting" DisplayName="Use Google Spreadsheet" Filename="research-criterias" sap:VirtualizedContainerService.HintSize="545,1269" sap2010:WorkflowViewState.IdRef="GoogleSheetsApplicationScope_3" Mode="Browse" SpreadsheetId="1OGdYPU9ct6L5tfNgePyaXi-PT7TnfJO0UNY0I_cg-Ak" SpreadsheetName="criteria_sheet" UseConnectionService="False" UserEmail="rpatest78@gmail.com">
+    <ugas:GoogleSheetsApplicationScope ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" FileId="{x:Null}" ParentFolderId="{x:Null}" ParentFolderPath="{x:Null}" Timeout="{x:Null}" Account="rpatest78@gmail.com" Action="UseExisting" DisplayName="Use Google Spreadsheet" Filename="research-criterias" sap:VirtualizedContainerService.HintSize="510,1068" sap2010:WorkflowViewState.IdRef="GoogleSheetsApplicationScope_3" Mode="Browse" SpreadsheetId="1OGdYPU9ct6L5tfNgePyaXi-PT7TnfJO0UNY0I_cg-Ak" SpreadsheetName="criteria_sheet" UseConnectionService="False" UserEmail="rpatest78@gmail.com">
       <ugas:GoogleSheetsApplicationScope.Body>
         <ActivityAction x:TypeArguments="ugas:IGoogleSheetTarget">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ugas:IGoogleSheetTarget" Name="Spreadsheet" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="511,988" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,787" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="temp" />
             </Sequence.Variables>
@@ -124,9 +124,9 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:BuildDataTable DataTable="[OUT_tableCriteres]" DisplayName="tableCriteres" sap:VirtualizedContainerService.HintSize="469,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;realEstateObject&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;locationResearch&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;budgetResearch&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;surfaceResearch&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;typeResearch&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;buyAlone&quot; msdata:Caption=&quot;&quot; type=&quot;xs:boolean&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;maximumLoanDuration&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;monthlyIncomes&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;reportEmail&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-            <uga:ReadRange ContinueOnError="{x:Null}" SpreadsheetId="{x:Null}" AuthScopesInvalid="False" DisplayName="Read Range" GoogleSpreadsheet="[Spreadsheet]" sap:VirtualizedContainerService.HintSize="469,213" sap2010:WorkflowViewState.IdRef="ReadRange_1" IncludeHeaders="True" Range="A:H" Result="[OUT_tableCriteres]" SheetName="Sheet1" />
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="469,544" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <ui:BuildDataTable DataTable="[OUT_tableCriteres]" DisplayName="tableCriteres" sap:VirtualizedContainerService.HintSize="434,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;realEstateObject&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;locationResearch&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;budgetResearch&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;surfaceResearch&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;typeResearch&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;buyAlone&quot; msdata:Caption=&quot;&quot; type=&quot;xs:boolean&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;maximumLoanDuration&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;monthlyIncomes&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;reportEmail&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+            <uga:ReadRange ContinueOnError="{x:Null}" SpreadsheetId="{x:Null}" AuthScopesInvalid="False" DisplayName="Read Range" GoogleSpreadsheet="[Spreadsheet]" sap:VirtualizedContainerService.HintSize="434,213" sap2010:WorkflowViewState.IdRef="ReadRange_1" IncludeHeaders="True" Range="A:H" Result="[OUT_tableCriteres]" SheetName="Sheet1" />
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,343" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <TryCatch.Try>
                 <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="431,317" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
                   <ui:MultipleAssign.AssignOperations>
@@ -200,10 +200,10 @@
                 </ui:MultipleAssign>
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="435,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,181" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
