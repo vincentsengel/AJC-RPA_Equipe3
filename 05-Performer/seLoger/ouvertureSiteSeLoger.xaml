@@ -71,12 +71,11 @@
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="ouvertureSiteSeLoger" sap:VirtualizedContainerService.HintSize="966,2263" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="url_seLoger" />
+      <Variable x:TypeArguments="x:String" Name="str_urlSeLoger" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -86,7 +85,7 @@
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="924,121" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;debut ouverture site seloger.com&quot;]" />
     <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="url_seLoger" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="924,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
       <ui:GetRobotAsset.Value>
-        <OutArgument x:TypeArguments="x:String">[url_seLoger]</OutArgument>
+        <OutArgument x:TypeArguments="x:String">[str_urlSeLoger]</OutArgument>
       </ui:GetRobotAsset.Value>
     </ui:GetRobotAsset>
     <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" ContinueOnError="False" DisplayName="Use Browser Chrome: Petites annonces immobilières | 1er site immobilier français | Portail immo" sap:VirtualizedContainerService.HintSize="924,1833" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="6cc10d29-c6b4-4014-916c-2d799a089ae8" Version="V2">
@@ -110,7 +109,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="420,81" sap2010:WorkflowViewState.IdRef="NGoToUrl_2" Url="[url_seLoger]" Version="V1" />
+                    <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="420,81" sap2010:WorkflowViewState.IdRef="NGoToUrl_2" Url="[str_urlSeLoger]" Version="V1" />
                     <uix:NCheckState Exists="{x:Null}" sap2010:Annotation.AnnotationText="Si une recherche a été lancée, clique sur 'nouvelle recherche'" DisplayName="Check App State 'Nouvelle recherche'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="420,658" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="6cc10d29-c6b4-4014-916c-2d799a089ae8" Version="V1">
                       <uix:NCheckState.IfExists>
                         <Sequence DisplayName="La cible apparaît" sap:VirtualizedContainerService.HintSize="376,411" sap2010:WorkflowViewState.IdRef="Sequence_6">
@@ -176,7 +175,7 @@
         </ActivityAction>
       </uix:NApplicationCard.Body>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="1090, 29, 844, 1063" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALDSURBVEhLtZS7a1RBFMa/aHBBjeKjUaMEC0Vc0ezu3UeyEVEbo4WPYNIE/AeCGNFG0UqwM1iKdkJIQoL4aASjoI0WUbAQYuLe3fvYh5AiKijJev3Ovbs4A5dUN8WPnXNm5vtmzpm78DxvVQlNRkloMkpCk1ESmowSLSjCUMgIa0ykNrhIb60gt81EenMBR1oX0IfvOLW2iNR4AUmHa+ZIjkBQNbVAN0jvpsF1bpiwkH7tIPPWhPHCROe9Gk7nKji5xQzEPfKTdIq4oGpqQYmnFii0nyYfeULZ7BV8ko1x0qP5COfjjBdpIvEnG/mNBIKqqQUWsj7c8FjEhBLSnyk6yvEURd+VYJhcM2Ah1yviQgnZp2WcaCEQVE0taJRnF0/+tWGwZCOToYnkWyje6iARKyIh8e3mIXjDuwRNVE0tcNAltHOzb8BfChjPazgWd3kzGqCC83CRE4OxpoGD7GCZuSaqphb85euo4wIXdY80a94wctnoK0Uk1y3gGn6jf72N7pkCEtKT+i/0ZpdxDks466NqaoFM1mlSxdEYa3uH4otBgwMj5iZrGIqVcHCviYTZOMC8jWyHw5ML9ko3sPiCquhhCbpYghQXZ46XkHpTwCEKSbkSXhkDl3mjPL+HH2LM8SsH6U223ye/V5qmFsgkT+m/ZRlLPWnW5uDiWGAigslHNnouyVgMLKQeuFxvBQ9kZQO+lnY2ch8XdfB3O2mzkG+rYOjhNxzwDfhEb/JZDsu4wTjX86M0dpI9ZIeqqRlwcpKYLM88ec/xNH8/FHB4OSiRUeXfRrsDY/h/X1J/mJ/jui/EZTytamoGnJxXNmrQbJaccVmCSvAVz4asEWZUTc2ghp7+KvJXWar73DDBEz0jo2zeDebi3MyeSG+ETBebO8J1U7zBS/KEJb1F+lRNzWA1CE1GSWgySkKTURKajA4P/wCCf1RFcquCQAAAAABJRU5ErkJggg==" InformativeScreenshot="e94998ff82e624f4b5b0acec3f57221d.png" Selector="&lt;html app='chrome.exe' url='https://www.seloger.com/' /&gt;" Url="[url_seLoger]" />
+        <uix:TargetApp Area="1090, 29, 844, 1063" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALDSURBVEhLtZS7a1RBFMa/aHBBjeKjUaMEC0Vc0ezu3UeyEVEbo4WPYNIE/AeCGNFG0UqwM1iKdkJIQoL4aASjoI0WUbAQYuLe3fvYh5AiKijJev3Ovbs4A5dUN8WPnXNm5vtmzpm78DxvVQlNRkloMkpCk1ESmowSLSjCUMgIa0ykNrhIb60gt81EenMBR1oX0IfvOLW2iNR4AUmHa+ZIjkBQNbVAN0jvpsF1bpiwkH7tIPPWhPHCROe9Gk7nKji5xQzEPfKTdIq4oGpqQYmnFii0nyYfeULZ7BV8ko1x0qP5COfjjBdpIvEnG/mNBIKqqQUWsj7c8FjEhBLSnyk6yvEURd+VYJhcM2Ah1yviQgnZp2WcaCEQVE0taJRnF0/+tWGwZCOToYnkWyje6iARKyIh8e3mIXjDuwRNVE0tcNAltHOzb8BfChjPazgWd3kzGqCC83CRE4OxpoGD7GCZuSaqphb85euo4wIXdY80a94wctnoK0Uk1y3gGn6jf72N7pkCEtKT+i/0ZpdxDks466NqaoFM1mlSxdEYa3uH4otBgwMj5iZrGIqVcHCviYTZOMC8jWyHw5ML9ko3sPiCquhhCbpYghQXZ46XkHpTwCEKSbkSXhkDl3mjPL+HH2LM8SsH6U223ye/V5qmFsgkT+m/ZRlLPWnW5uDiWGAigslHNnouyVgMLKQeuFxvBQ9kZQO+lnY2ch8XdfB3O2mzkG+rYOjhNxzwDfhEb/JZDsu4wTjX86M0dpI9ZIeqqRlwcpKYLM88ec/xNH8/FHB4OSiRUeXfRrsDY/h/X1J/mJ/jui/EZTytamoGnJxXNmrQbJaccVmCSvAVz4asEWZUTc2ghp7+KvJXWar73DDBEz0jo2zeDebi3MyeSG+ETBebO8J1U7zBS/KEJb1F+lRNzWA1CE1GSWgySkKTURKajA4P/wCCf1RFcquCQAAAAABJRU5ErkJggg==" InformativeScreenshot="e94998ff82e624f4b5b0acec3f57221d.png" Selector="&lt;html app='chrome.exe' url='https://www.seloger.com/' /&gt;" Url="[str_urlSeLoger]" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
   </Sequence>

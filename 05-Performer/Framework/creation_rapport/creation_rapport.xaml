@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1488,3124</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1488,3562</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>creation_rapport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -72,9 +72,9 @@
       <AssemblyReference>System.Data.Entity</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="creation_rapport" sap:VirtualizedContainerService.HintSize="1427,3059" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="creation_rapport" sap:VirtualizedContainerService.HintSize="1427,3497" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="sd:DataTable" Name="filtreFinancement" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_filtreFinancement" />
       <Variable x:TypeArguments="x:Int32" Name="i" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -83,7 +83,12 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1385,121" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;debut creation du rapport&quot;]" />
-    <If Condition="[in_dt_tableAnnonces Is Nothing]" sap:VirtualizedContainerService.HintSize="1385,2645" sap2010:WorkflowViewState.IdRef="If_1">
+    <If sap2010:Annotation.AnnotationText="Si la table des annonces est vide &#xD;&#xA;-&gt; le corps du texte indique 'pas de résultat'&#xD;&#xA;&#xD;&#xA;Sinon&#xD;&#xA;-&gt; composition du message" Condition="[in_dt_tableAnnonces Is Nothing]" sap:VirtualizedContainerService.HintSize="1385,3083" sap2010:WorkflowViewState.IdRef="If_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
       <If.Then>
         <Sequence sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
@@ -102,13 +107,13 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="1036,2487" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence sap:VirtualizedContainerService.HintSize="1036,2838" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="994,2395" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+          <ui:IfElseIf sap2010:Annotation.AnnotationText="Cas 1 : la table de financement est vide&#xD;&#xA;-&gt; itère sur la table des annonces et indique pour chacune qu'il n'y a pas d'offre de pret pour ce bien&#xD;&#xA;&#xD;&#xA;Cas 2 : la table annonce est non vide et la table de financement est non vide&#xD;&#xA;-&gt; compose le message" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="994,2746" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
             <ui:IfElseIf.ConditionBlocks>
               <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                 <ui:IfElseIfBlock BlockType="If" Condition="[in_dt_tableFinancement.RowCount()=0]">
@@ -169,7 +174,7 @@
                 </ui:IfElseIfBlock>
                 <ui:IfElseIfBlock BlockType="ElseIf" Condition="[in_dt_tableFinancement.RowCount() &lt;&gt;0 and  in_dt_tableAnnonces.RowCount() &lt;&gt;0]">
                   <ui:IfElseIfBlock.Then>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="943,1519" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="943,1783" sap2010:WorkflowViewState.IdRef="Sequence_7">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -183,19 +188,19 @@
                           <InArgument x:TypeArguments="x:Int32">1</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dt_tableAnnonces]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="901,1223" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Pour chacun des rows de la table des annonces :" DataTable="[in_dt_tableAnnonces]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="901,1456" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                         <ui:ForEachRow.Body>
                           <ActivityAction x:TypeArguments="sd:DataRow">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="867,1109" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="867,1311" sap2010:WorkflowViewState.IdRef="Sequence_2">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:FilterDataTable DataTable="[in_dt_tableFinancement]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="825,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[filtreFinancement]" SelectColumnsMode="Keep">
+                              <ui:FilterDataTable sap2010:Annotation.AnnotationText="Filtre la table de financement pour que la référence de l'annonce corresponde à l'annonce en cours" DataTable="[in_dt_tableFinancement]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="825,202" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_filtreFinancement]" SelectColumnsMode="Keep">
                                 <ui:FilterDataTable.Filters>
                                   <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                                     <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
@@ -213,8 +218,13 @@
                                     <x:Null />
                                   </scg:List>
                                 </ui:FilterDataTable.SelectColumns>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
                               </ui:FilterDataTable>
-                              <Assign sap:VirtualizedContainerService.HintSize="825,64" sap2010:WorkflowViewState.IdRef="Assign_1">
+                              <Assign sap2010:Annotation.AnnotationText="compose le message :&#xD;&#xA;déscription de l'annonce" sap:VirtualizedContainerService.HintSize="825,106" sap2010:WorkflowViewState.IdRef="Assign_1">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[out_str_emailContent]</OutArgument>
                                 </Assign.To>
@@ -224,22 +234,28 @@
 " Prix : " +CurrentRow("objectPrice").ToString+ vbCrLf +
 " Lien : " + CurrentRow("adUrl").ToString]</InArgument>
                                 </Assign.Value>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
                               </Assign>
-                              <If Condition="[filtreFinancement.RowCount()&lt;&gt;0]" sap:VirtualizedContainerService.HintSize="825,613" sap2010:WorkflowViewState.IdRef="If_2">
+                              <If sap2010:Annotation.AnnotationText="Si la table filtrée est non vide&#xD;&#xA;-&gt; compose le message&#xD;&#xA;&#xD;&#xA;Sinon&#xD;&#xA;-&gt; indique qu'il n'y a pas de financement pour cette annonce" Condition="[dt_filtreFinancement.RowCount()&lt;&gt;0]" sap:VirtualizedContainerService.HintSize="825,731" sap2010:WorkflowViewState.IdRef="If_2">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <If.Then>
-                                  <Sequence sap:VirtualizedContainerService.HintSize="476,466" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                  <Sequence sap:VirtualizedContainerService.HintSize="476,497" sap2010:WorkflowViewState.IdRef="Sequence_9">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Assign sap:VirtualizedContainerService.HintSize="434,64" sap2010:WorkflowViewState.IdRef="Assign_13">
+                                    <Assign sap2010:Annotation.AnnotationText="" sap:VirtualizedContainerService.HintSize="434,95" sap2010:WorkflowViewState.IdRef="Assign_13">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:String">[out_str_emailContent]</OutArgument>
                                       </Assign.To>
@@ -247,8 +263,13 @@
                                         <InArgument x:TypeArguments="x:String" xml:space="preserve">[out_str_emailContent  +vbCrLf +
 "Les meilleurs offre de prets liés a ce bien :  "  + vbTab]</InArgument>
                                       </Assign.Value>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
                                     </Assign>
-                                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[filtreFinancement]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="434,270" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+                                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_filtreFinancement]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="434,270" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
                                       <ui:ForEachRow.Body>
                                         <ActivityAction x:TypeArguments="sd:DataRow">
                                           <ActivityAction.Argument>
@@ -311,10 +332,11 @@
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ForEachRow>
-                      <Assign sap:VirtualizedContainerService.HintSize="901,64" sap2010:WorkflowViewState.IdRef="Assign_2">
+                      <Assign sap2010:Annotation.AnnotationText="Composition du message" sap:VirtualizedContainerService.HintSize="901,95" sap2010:WorkflowViewState.IdRef="Assign_2">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[out_str_emailContent]</OutArgument>
                         </Assign.To>
@@ -322,12 +344,22 @@
                           <InArgument x:TypeArguments="x:String" xml:space="preserve">["Bonjour" + vbCrLf+
 "Les biens aux meilleurs prix pour ce jour selon vos critères: " + out_str_emailContent]</InArgument>
                         </Assign.Value>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
                       </Assign>
                     </Sequence>
                   </ui:IfElseIfBlock.Then>
                 </ui:IfElseIfBlock>
               </sc:BindingList>
             </ui:IfElseIf.ConditionBlocks>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
           </ui:IfElseIf>
         </Sequence>
       </If.Else>
