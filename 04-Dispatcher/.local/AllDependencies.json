@@ -9548,15 +9548,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\VirtualBox\\.nuget\\packages\\": {}
+    "C:\\Users\\Nejma\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "Dispatcher",
       "projectName": "Dispatcher",
-      "projectPath": "C:\\Users\\VirtualBox\\Documents\\GitHub\\AJC-RPA_Equipe3\\04-Dispatcher\\.local",
-      "packagesPath": "C:\\Users\\VirtualBox\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\VirtualBox\\Documents\\GitHub\\AJC-RPA_Equipe3\\04-Dispatcher\\.local"
+      "projectPath": "C:\\Users\\Nejma\\Documents\\GitHub\\AJC-RPA_Equipe3\\04-Dispatcher\\.local",
+      "packagesPath": "C:\\Users\\Nejma\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Nejma\\Documents\\GitHub\\AJC-RPA_Equipe3\\04-Dispatcher\\.local"
     },
     "frameworks": {
       "net461": {
@@ -9592,7 +9592,7 @@
             "version": "[22.4.7, 22.4.7]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\VirtualBox\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\UiPath\\Studio\\runtime.json"
       }
     },
     "runtimes": {
