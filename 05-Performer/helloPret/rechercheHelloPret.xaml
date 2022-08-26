@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1794,4513</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1488,5027</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>rechercheHelloPret_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="80">
@@ -88,12 +88,14 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Data.Entity</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="rechercheHelloPret" sap:VirtualizedContainerService.HintSize="1204,4448" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="rechercheHelloPret" sap:VirtualizedContainerService.HintSize="1100,4962" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Default="https://www.hellopret.fr/simulation/" Name="urlSite" />
-      <Variable x:TypeArguments="x:Boolean" Name="asCouple" />
+      <Variable x:TypeArguments="x:String" Default="https://www.hellopret.fr/simulation/" Name="str_urlSite" />
+      <Variable x:TypeArguments="x:Boolean" Name="bol_asCouple" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_bestRates" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -101,169 +103,167 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1162,121" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;debut de recherche sur HelloPret&quot;]" />
-    <ui:BuildDataTable DataTable="[out_dt_financement]" DisplayName="Build Data Table helloPret.com" sap:VirtualizedContainerService.HintSize="1162,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;loanRate&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;monthlyPayment&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;loanCost&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;adReference&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Simulez votre prêt immobilier - Simulateur crédit immobilier" sap:VirtualizedContainerService.HintSize="1162,3935" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="53354aae-e7c2-4b36-b5a6-aaf41fa6a491" Version="V2">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1058,121" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;debut de recherche sur HelloPret&quot;]" />
+    <ui:BuildDataTable DataTable="[out_dt_financement]" DisplayName="Build Data Table helloPret.com" sap:VirtualizedContainerService.HintSize="1058,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;loanRate&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;monthlyPayment&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;loanCost&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;adReference&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Simulez votre prêt immobilier - Simulateur crédit immobilier" sap:VirtualizedContainerService.HintSize="1058,4449" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="53354aae-e7c2-4b36-b5a6-aaf41fa6a491" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Faire" sap:VirtualizedContainerService.HintSize="1024,3719" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Faire" sap:VirtualizedContainerService.HintSize="1024,4233" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dt_estate]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="982,3625" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="//// Pour chaque ligne trouvée dans la table extraite de SeLoger.com ////&#xD;&#xA;" DataTable="[in_dt_estate]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="982,4139" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRowEstate" />
                   </ActivityAction.Argument>
-                  <Sequence sap:VirtualizedContainerService.HintSize="948,3509" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                  <Sequence sap:VirtualizedContainerService.HintSize="948,3981" sap2010:WorkflowViewState.IdRef="Sequence_18">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence sap:VirtualizedContainerService.HintSize="906,2070" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="906,2259" sap2010:WorkflowViewState.IdRef="Sequence_16">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="839,1976" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                      <If sap2010:Annotation.AnnotationText="Si la recherche est dans ancien&#xD;&#xA;-clique sur 'ancien'&#xD;&#xA;sinon&#xD;&#xA;clique sur 'neuf'" Condition="[in_dt_criterias.Rows(0).item(&quot;typeResearch&quot;).ToString = &quot;ancien&quot;]" sap:VirtualizedContainerService.HintSize="797,481" sap2010:WorkflowViewState.IdRef="If_1">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <If Condition="[in_dt_criterias.Rows(0).Item(4).ToString = &quot;ancien&quot;]" sap:VirtualizedContainerService.HintSize="797,409" sap2010:WorkflowViewState.IdRef="If_1">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <If.Then>
-                            <Sequence sap:VirtualizedContainerService.HintSize="376,250" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <uix:NClick ClickType="Single" DisplayName="Click 'Ancien'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="53354aae-e7c2-4b36-b5a6-aaf41fa6a491" Version="V1">
-                                <uix:NClick.Target>
-                                  <uix:TargetAnchorable BrowserURL="https://www.hellopret.fr/simulation/" DesignTimeRectangle="608, 369, 77, 36" ElementType="Text" FriendlyName="'Ancien'" FullSelectorArgument="&lt;webctrl aaname='Ancien' tag='DIV' innertext='Ancien' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Ancien' tag='DIV' type='' class='toggle_input__content' check:innerText='Ancien' /&gt;" Guid="7fc610ec-4a62-4fae-903c-9895f749390b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFEAAAAoCAYAAACGohY/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAARASURBVGhD7ZrZS1RRHMf7B3rpIeipJwkfpF4iaN9oo6JCIikzwYikrLTA0qZF2lXaMBMrRCuiHaxILFFstRJDs2zTQiu3Zhx1Vv3l9wfn6r1eZ+4sqeV5+MDcOb977pzP/Z3fOTNzR1FXN0kCQ0oMAj5J7HZ3kd1mo3arlSy/zdTa0kItzc0jGovFYkyiy+lkcTjJamkje6eN3E4XS9WLH0nAiVeJHe3tnHGdHR1Smg4eJSL7MGWRgVLewAwo0elwcPZh2uq1S3rRlYgMhECHza56X6KPrkRMYZmBxuknEYsIamDf9ySeUUkU01guIr6hkogMxDamb4DEO4pEZB8OZBb6jiIRX+XwTUQbIPGOIhFT+V9YkV0OF1VVf+r5vMOn7CgSsa3Bd2FtgD80NbVSUelLelZW0ZPhwd1r3n1QRKPGTaLDp7J124cCRWIwV+X0zFweaOjMlVRZ/VE3xl9qPtVSTPwBvkF67UOBIhEvtI3+YDa3UXjMTtqy5wjNXhVD2Xm3dOP+J4Iu8VV5FY2fvJgelbygHaYTtGlXSs+2qbfW3rn/mKLi9lL522ramHCQRodMo7A54VTy9LWqn7dVNbR+azK3jwmdRftOnOM6iP4XrNnM/YhY9H8yK4+vi/jo7Sb69v0Ht9k67ZR89CwdPXORrzFjRTTPkrWxe+jnzyalj0AIusTMnOucgfUNv/j1xHmr6X3NF6U970Y+DxQDjt+XSrsPnebXiyJiuZYi5t37zzRlyTo+9+KVO1weUjNyeFEpff6GJaAfxKLmJuxPownTV/D1UDMhecM2E0uHYNzIsWFzuc+DaedZMvpISc8KSgkLqsQ2i5UityRxBjrsDqqo/EAhU5crAwZ4jQHkFxTzANxON4sUsnEezofYsvJKVf9AKxGZOW7ifNU1Coqe8nVxfSERGVhbV8/tuMG40dpZ4i9BlSikZVy6Rs3Nv+nL1++0NHKr6sMKiZAhzkN2CIk4b2FPJqGuor6KGIFWougPNRhTFiAzkXmIFRLRJ/rGOeIaw1IiphMGpAXTCEIRY1QiMhqZLWIERiQKsJIPqsRAtzhiKkdsTqS6bw38QcHte494kDfzCznOm0QxaHEsYgRaiThGjc3KvaH7+QdVYqCbbewHsS/EItD3fdShqcuiKC7pGC8C3iTi+OHjJywGpQALBTAdzyCL2dpPIhaP2MTDXEMvXL7N9a6w+DldvfWApQ6qxEC/9mE/iIH3lQPEQiGmtBGJXS43Zy62PogF2O5AkFYiaGxsUbZLaMOW6EBqJgsaVInD8QcIbGlaW81kbWvXbdcCIRCEG6fX/rdQJCL1cRBIXRypKBKB/FHWP1QS5d8D/qGSCOQfVb7TTyKQf5n6hq5E+ee9b+hKBPIxEuMMKBHIB5qM4VGiQD5a5xlDEgGyEhmJE+RDnmoMSxRAmnzcWI3hx40lnpESA6ab/gCc65Sc0hrGxgAAAABJRU5ErkJggg==" InformativeScreenshot="8eea1bb4fbbbdf3c36a55913aa5fd097.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Simulez votre prêt immobilier - Simulateur crédit immobilier' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
-                                </uix:NClick.Target>
-                              </uix:NClick>
-                            </Sequence>
-                          </If.Then>
-                          <If.Else>
-                            <Sequence sap:VirtualizedContainerService.HintSize="376,250" sap2010:WorkflowViewState.IdRef="Sequence_5">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <uix:NClick ClickType="Single" DisplayName="Click 'Neuf'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="53354aae-e7c2-4b36-b5a6-aaf41fa6a491" Version="V1">
-                                <uix:NClick.Target>
-                                  <uix:TargetAnchorable BrowserURL="https://www.hellopret.fr/simulation/" DesignTimeRectangle="695, 369, 63, 36" ElementType="Text" FriendlyName="'Neuf'" FullSelectorArgument="&lt;webctrl aaname='Neuf' tag='DIV' innertext='Neuf' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Neuf' type='' tag='DIV' class='toggle_input__content' check:innerText='Neuf' /&gt;" Guid="786e8ca9-46ef-45e1-ab2e-509fa023dbf8" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEMAAAAoCAYAAACl+UfqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALdSURBVGhD7ZpLaBNRFIa7FtduXLsWXApCXSq4Ed1IoQsRfCxEcCGKVQQfC1FaXRRLQREffYgLrVIoLSIuxLYbH7W0IWmTJiaZZJpJ0sz7d86JM9w81D4iNs0d+EjuuefezHxz5s5Apg2OC0kZKUOgLaMoaAnSaWTiCWQjUeQiSzBKOlzbqZQxt60dLcH2/ZjfeQjhvSeweOoWUm/esyASY5tWi8moA8mJX+/nitE8KS0tw4ekJJ+PShkiUoaAlCEgZQhIGQJShoCUISBlCDStjIU9nVB7BqE9HUX2zjOEdhysm7cWGiIjsrsD6v1h5B6/RaLjam28/xWi7acrxmwEEmF8DsHfjNmFzSMjduAcrKU075g+9T3YMT/u5Iv4cfxGzbj1olzqhbuiw4om+TdIer28tdJYGY4DVzeRufmoIt5oGTS/a1gwZiJ1+9dLQ2XYySycXAHmXJRL+Xcy1HtDcFSNK4kOqjj2ifOpb7n3JecXRj4E+frkDOxMDsqVPsZZznsDXbiWHcT93I3QUBnEyrtpwHb4oOrJoDj12ykV+aFxGN/CXFHawBj35x6OsKSVialgfqoAkkYVkTp7l9cIGuNoRejTsxzzczdCYysjq0G5/IA/qU0CRBmL+07CjCT4zCbP3Oax8SMXWYw5H+Nr/28yqN0Ul4l/0PnhieBs0w77cYK+0+JHFUF3BONLiGM0nubZcjKCSvHWEDMc/7OMXxTHJ7lytpwMitHa4JoWL6jVkpxCCenzPTXzENUyaGE1Q0vNLYMPwrur0CbGtSej5QVUWYbaPQilqw+lj1/52YH61e4BvkuQxPyLifIC6+U3tQzC32kxTg9kdNukuL+5RZ0rifqrny6tWAqF1+X8ppCxHsK7jiLReQ2JY101j9LUpnj88IWK+L/mv8nYjEgZAlKGgJQhIGUISBkCUoaAlOEh/3j2aN1XElbzskrdV362Iqt5jUlstDpSRoCLnxWKno19rA49AAAAAElFTkSuQmCC" InformativeScreenshot="d489777ebec733effc51cacf3247664a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Simulez votre prêt immobilier - Simulateur crédit immobilier' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
-                                </uix:NClick.Target>
-                              </uix:NClick>
-                            </Sequence>
-                          </If.Else>
-                        </If>
-                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into &quot;Valeur du bien&quot;" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="797,216" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="53354aae-e7c2-4b36-b5a6-aaf41fa6a491" Text="[CurrentRowEstate.Item(&quot;objectPrice&quot;).ToString]" Version="V1">
-                          <uix:NTypeInto.Target>
-                            <uix:TargetAnchorable BrowserURL="https://www.hellopret.fr/simulation/" DesignTimeRectangle="336, 425, 119, 37" ElementType="InputBox" FriendlyName="'250 000'" FullSelectorArgument="&lt;webctrl innertext='Valeur du bien*' /&gt;&lt;webctrl tag='INPUT' parentclass='field__control euro' /&gt;" FuzzySelectorArgument="&lt;webctrl innertext='Valeur du bien*' /&gt;&lt;webctrl tag='INPUT' parentclass='field__control euro' type='tel' class='' aaname='' /&gt;" Guid="aab73338-ee97-4da7-940b-e00c34b2bf24" ImageBase64="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" InformativeScreenshot="30bc861eefd5f0f57f4b625fe248532e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' url='https://www.hellopret.fr/*' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
-                          </uix:NTypeInto.Target>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </uix:NTypeInto>
-                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into &quot;Durée du prêt&quot;" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="797,216" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="53354aae-e7c2-4b36-b5a6-aaf41fa6a491" Text="[in_dt_criterias.Rows(0).Item(&quot;maximumLoanDuration&quot;).ToString]" Version="V1">
-                          <uix:NTypeInto.Target>
-                            <uix:TargetAnchorable BrowserURL="https://www.hellopret.fr/simulation/" DesignTimeRectangle="691, 448, 78, 41" ElementType="InputBox" FriendlyName="'20'" FullSelectorArgument="&lt;webctrl innertext='Durée du prêt * ans' /&gt;&lt;webctrl aaname=' ' tag='SPAN' innertext='*ans' /&gt;&lt;webctrl tag='INPUT' type='tel' /&gt;" FuzzySelectorArgument="&lt;webctrl class='' tag='INPUT' type='tel' aaname='' /&gt;" Guid="44fc5604-5a95-4528-a797-33a611bb1fdb" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAE4AAAApCAYAAACbWx//AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAATdSURBVGhD7ZhfSGR1FMd77iWI6KG3CKK3HgIh8aGwEhPFTFoSpTWI0rTwSdQ1WRVkQ/wTKkoW9k9pKRWDxQoRyhAltT/SCs406+6sM6LOOK6OMzs6p/ke7+/nveMd53p1w4HfFw7ce875zXA+c37/5iE6iJKy05sCZ9OOwClZkwJnUwqcTSlwNqXA2ZQCZ1MKnE1ZBXcQ2KHtb36ku69V079PFtDywy+Q45GX6M6L75O/+3va39jSMs2FuK99iFbS3uaxMDzDl2zshVQycNHQffJ3fkuOR1+RBZuZ65lLFJz6UxtlVOj3m7Ty3GXTcTDEkJNSSgYu+Msf5Hz8VdOC4w0A7jvvaiMPhfeToAm7/fw7FLmzpo1KASUDd3AvSJ4367k498sf0M4PUzy1opF9iqx4yfNWowFA4Isb2siYolHyXftKxjC1t3pHuItheIZPxJGLMSmhZOCg3Z9naWfsV9N4+B8XuZ5+Qxa/caVPixBFVjfodsa7Mrb23jUGJoRn+EQcuRiTErIC7iSFl27x+iaK14Pb++0vQ0cZulETfCKOXIxJCZ0V3O5PMwY4/q7vtIgRCgzrZbzg0+eYwb2QOgs4HFFWL12RRbueep3Cfzu1KNHm1c+OYrGuRHfGK75jMSYlZBccNofNps9lwbCNjz5lvxCmrYhZBaef6onk8XioubmZMjIy2PDscrmovr6e0tLSKC8vj9+hkZER9qWnp9PCwgLNzs5SWVkZv2dmZlJbWxttbRnPkcFgkAYHB6mwsJDHZmdn08DAAPul7IADnK2+UcMUdWd9SBGPcWF/EOCcTqcsSG9FRUVUUlLCz3pwY2NjMqe9vZ1hiXdhLS0tFA6HOd/n81F5efmxHFhlZSWtr69z3unBxY4LgS9vGKDhnBa+eRyK7+OvZY5VcBiTSCiuqalJFlJaWkqjo6M0PDxMBQUF0p8IHLqsv7+fi5+fn5c/gFk+cnt6emhxcZGmp6dlh6ODWacCF4OGa5f+FnHr2WI+kpjpvDcHFIciURi6y+v1ahGipaUlysnJSQgCBuiis6KxWjo7O2Vsbm6O/V1dXfyem5tLy8vL7BNaW1s7mq6WwcW+CIdf5xOxD9SKZGi6zSBe530cwfokCkXRKF4IBdXV1XEsEbihoSH2CQlIMAFucnKSuw0+TOuGhgaamJjgLtV/n2Vwwck5AzRMr0R3U6HzPgDrIeBZr729PdPN4aQxZuBCoRB1d3dLeHqrqanhNZBlBRygiX9EYI7Hsuje9Qm+eplZNBw5HBj7hc7zyjU1NSWL6O3t1byHstJxVsAJBQIB/r7W1lbeVUVeR0cH7e/HTg7JwEV3Q+S93CSLs2L6tQwXd1zgzfL0ZuWSj3UsKyuLC8DOh+KEHA6HXP/OAg4/ALpOL3RzY2Mj51VUVND29vaDBwdZ+VvppLVSCEVVV1fLYquqqnhNGh8fp+LiYum3Cw4bB3ZPdFhfXx/vqH6/n2ZmZuRRB8sBQP4v4CBMYbM/Mv2fXOcbiFUlOsehE5PtqlY6DhuQfmrqDZsF4qxk4C6i3G43r2fi5oBngDqPzQHa3NzkjsvPz+cYgNXW1vJSIXfWVAR3IaTA2ZQCZ1MKnE0pcDalwNmUAmdT8eBWVn3KLJgCZ9MUOJumwNm0Y+CUnc4UOFsWpf8Az3bfSXaXBm8AAAAASUVORK5CYII=" InformativeScreenshot="8f42d6acb5abbcc8d251e83c7ac5f700.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Simulez votre prêt immobilier - Simulateur crédit immobilier' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
-                          </uix:NTypeInto.Target>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </uix:NTypeInto>
-                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into &quot;Apport&quot;" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="797,216" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="53354aae-e7c2-4b36-b5a6-aaf41fa6a491" Text="0" Version="V1">
-                          <uix:NTypeInto.Target>
-                            <uix:TargetAnchorable BrowserURL="https://www.hellopret.fr/simulation/" DesignTimeRectangle="646, 298, 123, 41" ElementType="InputBox" FriendlyName="'325 590'" FullSelectorArgument="&lt;webctrl aaname=' ' tag='DIV' innertext='Apport*€' /&gt;&lt;webctrl tag='INPUT' type='tel' /&gt;" FuzzySelectorArgument="&lt;webctrl class='' tag='INPUT' type='tel' aaname='' /&gt;" Guid="ddef6285-b43c-496c-b9a1-b8fdd87835cf" ImageBase64="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" InformativeScreenshot="b5f964830605d6a5cbdcb8e03fbe5a60.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Simulez votre prêt immobilier - Simulateur crédit immobilier' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
-                          </uix:NTypeInto.Target>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </uix:NTypeInto>
-                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into &quot;Revenus net/mois&quot;" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="797,216" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="53354aae-e7c2-4b36-b5a6-aaf41fa6a491" Text="[in_dt_criterias.Rows(0).Item(&quot;monthlyIncomes&quot;).ToString]" Version="V1">
-                          <uix:NTypeInto.Target>
-                            <uix:TargetAnchorable BrowserURL="https://www.hellopret.fr/simulation/" DesignTimeRectangle="674, 795, 93, 37" ElementType="InputBox" FriendlyName="'3 500'" FullSelectorArgument="&lt;webctrl aaname=' ' tag='DIV' innertext='Revenus net / mois*€' /&gt;&lt;webctrl tag='INPUT' type='tel' /&gt;" FuzzySelectorArgument="&lt;webctrl class='' tag='INPUT' type='tel' aaname='' /&gt;" Guid="3e6afe79-1e6f-4d72-9328-5a02b5ebed72" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGEAAAApCAYAAAAlDUeiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAS0SURBVGhD7ZlbaCNVGMd99kXwwQdfRHwRX1TEgqVopSpU3CJrURYWXRYv20q3CEu7oBVFkEa0XuiCQVS84e5SWK26CtaKkWVDWaGuQUXbTdO0adOtSdPNJs1tPvM/mZlMpnNrzqQ9D+cHHwlnzv/kzPefc5mTa6iikIy9DWmCAFE3QbL7SBMEQJogANIEAZAmCIA0QQCkCQLAZUK1/tbFObo8fIJidx+mueseoH+v7aRLN++nlQMjdHX6AimlslrZnswnZ5nOS6weeo2Uq1uqsk55fYNSb39JsbbDel18RxmuOcGj9YVmTSj8GaWlB4/qnbaLxOMvUnktraqs4TVh68JfFLvrkGV9BK6hjhU8Wt9oxgQlX6DVp1+37LRVXD5+wnFE8JhQnF92TKIWi/c8Q6V4UlXV4NH6SjMmgPz5CM3f8DCbhjIff0ulxSRLDiL73TmK3vqEfhOxO5+iYjShKrdjNAG6wt8L6hUXFIVSgc90LabDjffPkLJVZIHv2hSJQF1ouLV+06wJ6Gg+HGGfVqTHJ/QbcEtssyaUEuu02PGcrk0eCTT0B99Rpl1HXWgAj3YnVCoVCofD1NfXR+3t7dTR0UEDAwMUCoWoUCiolZo0wY3MR9/oN9CqkZA/d7HhaUU7Zoxtoy40gEfrlXK5TMFgkNra2ixjaGiI0unqeum3CUqhRLlff6eF2w/qN7A28JbtiAHGm71006O0/lKQ4vc/z24cge+ZT89SJZtXFTWMOkQuNKteqYMyYx0t2Txar0xNTbGnHwnHCBgZGaFAIEDd3d2sbHh4mHK5nD8mIGnGzhrDz93R8r5jVFqpTwn/vfqhfs1uBKEM17R60AAerRcymQz19/ezZHd1ddHMzIx6pdpudRqamJhgJjFaacLyI8eoOLek1rLHqwmI5LOj+u7I+LteEwkN4NF6IRKJUGdnJzMBIyCfbxzFDbTSBMT8jfvoyumfHHcWmgmYetaOjlHxnzjb0iKw+MfvPVJvr7ojw84MiGhCNBqlnp4elnyrGB8fV2sa8MMEI0gckrhy8BXXm9TAoo2368If85Zmadthrb3UG5+zcny6/YY5kX5onRDCBA28CBkX550uakZwdBC/r09vS3sizdOYSAszkq0lfnJyUi21oVUm2CWuGezaEnGLuqsjoRRbpStnfrHdepqHstPOAtPR5qkp27bM05GWMBFf1nbVhI3gV6xz+rFFPFlbTKvvCTAgsf+4fgOI7PfnVeV2bNuq7oJyP//WsDBHb3mstnYAnqMHHq0HWr47Kqc2aan7Bb2DboH9PTRW7LSt1JtfNCQDhuGAzaquMawO4Xi0bpjfE2Zn62sO3hOwTkxPT9cKmjEBT0r63VM0d/1Dlp02BhLsdGThtS08lel3TrIRYsbLcbQ+ekzwaN0wvjHDiNHRURobG6Pe3l5W5ssbcyWTpezXIfYHzsJtB/SO63/q/BBmSfYC2to8+SPTQa8n4Y4naf3lD6i4sKLWtMbuj5n0e6dZ207waJ1wOzsaHBykVCrFZ4LEnT09RZXsAGmCAEgTBECaIADSBAGQJgiANEEAzCbEEikZuxzSBAFCmiBASBMEiG0myNi7kCbseSj0P5/HDTRJbUI1AAAAAElFTkSuQmCC" InformativeScreenshot="3a9cc9989c599a7cba3d98862d28f548.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Simulez votre prêt immobilier - Simulateur crédit immobilier' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
-                          </uix:NTypeInto.Target>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </uix:NTypeInto>
-                        <If Condition="[Convert.ToBoolean(in_dt_criterias.Rows(0).item(&quot;buyAlone&quot;))]" sap:VirtualizedContainerService.HintSize="797,409" sap2010:WorkflowViewState.IdRef="If_2">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <If.Then>
-                            <Sequence sap:VirtualizedContainerService.HintSize="376,250" sap2010:WorkflowViewState.IdRef="Sequence_6">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <uix:NClick ClickType="Single" DisplayName="Click 'Seul'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="53354aae-e7c2-4b36-b5a6-aaf41fa6a491" Version="V1">
-                                <uix:NClick.Target>
-                                  <uix:TargetAnchorable BrowserURL="https://www.hellopret.fr/simulation/" DesignTimeRectangle="617, 810, 60, 36" ElementType="Text" FriendlyName="'Seul'" FullSelectorArgument="&lt;webctrl aaname='Seul' tag='DIV' innertext='Seul' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Seul' tag='DIV' type='' class='toggle_input__content' check:innerText='Seul' /&gt;" Guid="a0b55006-9522-47c7-bef0-575cf72597ec" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEAAAAAoCAYAAABOzvzpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAMASURBVGhD7ZrZS5RhFMbnH+imi8CrrrzoQuxGgiTKilaQNqTIFqEFIykvDKPwIrMiScMs2myMQkdaXDAtcclSsxTNsDLLjRQSZnSccZx9njwnvo8Zfb0ZJ5jx/S4eZt7znhfO+X1nnm82Hbw+yCwNgPLE5/HCYbdj2mrF1KQZEyYTTEbjkpfO7XJx07SwTlngmLHD43IzEH9SS1U6utIzNps0Dc+VTtbGFWkmKArKJA2AKCiTNACioEzSAIiCMimiAMzY7DAaJ+F0OIX7wShkALxuD9o+fUbu7WJcu/UIbxpbuWBRbrB6+rwauqjVaGnvEu4Ho5AAcDvd3DQV56+t+1MxNDw6Lz9YhS2Azu6viIrdjEs37s1+pHbwNHR090JfWsFwRGeCUdgCqG9u58Iel1UJ9xV1f/mO3SnpnBuTsA+lL2tVQARxy+zEVNQ0qvkFD0uQdCIDA0O/eR22APp/DWPNjmQsX7Ue1wv1GB83zsuhiVgZtx2H0y6irqkNl/MfYEXMRoZH+9QUNUdNKmdoomI3JaGvf5DXYQuA9KGjB3HbDnKBy6LjkXI2S339k2unZ+Ui8cgZFY5lyopDpy/gfE4BPC5P5AMgkevX1L9n86NCaSq+9Q3wrYti8YlHkZ13nw3zakERj/zJjGw+tyQAKCITLDZUcrF5d58IASgqeVHDExLRAKatNvwcGAn4Wq25rVMFQFeYrnTC3uMYHfsTcFbRXABkjuey88MfgMvp4nGm1z0ZXHVdM55V1WHDnmNsemR+lPe2tYPXB1Iz0dP7A4Ozzn5HX4bhkTHep1j02kTsTE5DbUMLmyTl+wMwlL9mAIVFBr7dKjUsRiGZAJNpEjk3/xVMBZLIEBvefVSngh7LXzXw7U/JWbcrRQU0983UqcwrqKxtCgCg3G38Y4tVSD2AmpiYMMNstiz4LTP5w0I5tKa41TIdEPcX+QWdD9UbrP9igpEkDYAoKJM0AKKgTNIAiIIySftxVPqfx6X/g4TyhBqW8i8y/jRklOQAfPgLm02LzeFSsHkAAAAASUVORK5CYII=" InformativeScreenshot="0311836aae0032b74df2280fb2eacd13.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Simulez votre prêt immobilier - Simulateur crédit immobilier' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
-                                </uix:NClick.Target>
-                              </uix:NClick>
-                            </Sequence>
-                          </If.Then>
-                          <If.Else>
-                            <Sequence sap:VirtualizedContainerService.HintSize="376,250" sap2010:WorkflowViewState.IdRef="Sequence_7">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <uix:NClick ClickType="Single" DisplayName="Click 'À deux'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="53354aae-e7c2-4b36-b5a6-aaf41fa6a491" Version="V1">
-                                <uix:NClick.Target>
-                                  <uix:TargetAnchorable BrowserURL="https://www.hellopret.fr/simulation/" DesignTimeRectangle="688, 810, 76, 36" ElementType="Text" FriendlyName="'À deux'" FullSelectorArgument="&lt;webctrl tag='LI' innertext='À deux' parentclass='toggle_input__list' /&gt;&lt;webctrl aaname='À deux' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='À deux' type='' tag='DIV' class='toggle_input__content' check:innerText='À deux' /&gt;" Guid="9c9fb5ac-ff5c-461f-9890-af89d4f9a7e7" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFAAAAAoCAYAAABpYH0BAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAQ0SURBVGhD7ZpJiBNBFIbnLJ69ePYseBQEPYgoKCJ6EUFBFFEUVxTFBQUVF3QURBwEBR1cEAU3XHDDfUVcUcfErJN9snZ60uln/y9W6MSKJukeUVMNP8zUe6lOff2W6k53UdkkpfalADpUVzqdpkQ83tmKxSgRClPSG6CML0S6ViTTKEuB1asLE3weNr6zNXwCfRk5lTxjF5B/6W6KXr3PUNMePxmDJSk4IQWwgQA0uLWHEsEwR6UMHqQA/kYAGTlznZJffdJoVACbVGDVfo7GYkFTANtVaF8vQ7RHogLYohCJSGcF0IFQEzOegALYrtBYRCorgG0qtOMY7xNdBZjcdYJKwRjFVh+Q2v8ncRRam21XAaYOnqVyOkdmoUjJvb1Sn/9JuGNxPYWD09aQ/qaPclceUt+IKVKfRgrNWEf987bRtzFzpfa/Tb5FO90HGFm4kzK91yh99CL5xy+W+jSS/sFLpl6ixI7jUvvfJtw7uw6w+OoT4TCtDtVqGv9rAFEHXQUYnrOFjGSGSv4IlXMaFe6/lvo10r8GEE9xXAU4cPg8kVGmzKkbNOgNc0cOTF4h9UV9hJ+ZL3LEGtEUqx4gN6ZUhn1gy998Vq2ROF85m6fc5QdV/+LzD2Qk0hTf3EPR5fvIiCSpFIhSeO5Wtmcv3KNyJk/Z83ern3EiVwFqj95y5EVXdvPfv4qm9PErDNvUdI5U/aPXImTWfEZcEIDNnr1F+nuPtfu3LtDpm5U5jl1msIXbL6rz1kcx4GJe+KBB4WL86sK2KtcAhmau54Ui8nzjFlGq+zSZJaNmcUKwww91MtV9pjpuX7zwKQ9kKbJkD9ur5/gSIO/oOU0BBChRUoovPrLNfk6ncg2gAKY9eUf987dTfFMP7wllV5sjwbIh/eArxu2Lxzjs2FMi8rA10t/28ZiYsxmAUHL3CR7DgTkAX9icyjWASFnZgRQFTLuvgNMywB/K33rOEdosQFEucGgP37S8P20ot5qISC0jPkCxdYd48RDXH+vIXX1U4x+YuIwLez1c++I59axIQ+o1ujWsB4jmMtgXrAGI5sE7g2/9pH/ysQ0RaZ+nXbm2jcF+D/UMe0D7eHzDYY4gfPn6TbUo7oCOBqE9tiIYTcW2+MzJa5UmYvmgbgE2SgTmhV2UDZSD7LnblSZjmwORVrjzksfQkOIbj1S+j3XxgtPX1nyfduTaRhpdFDCQKvbxarOQpHFg0vLKgq3P4UB31J6+rwEIAACNMXFg2wMYsCPikNLiAJjcpYo/5sDDDZx78LO/uvXBNgidHGXAaSoPya1cq0KqIs08o2ZJ7RBs8AnP3vTTovE/xnEfbR//ExqShwmdoiF5nNVJGpIHqp0i9UjfodSPSg6kftZ0IPXDugOpVzvaFBqGermoDQGcer2tWTl5wVK94mvJySu+skGl5qUAOpJJ3wFlD54Rty76HAAAAABJRU5ErkJggg==" InformativeScreenshot="ef615fa2346cfb880015fb85e9d8a494.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Simulez votre prêt immobilier - Simulateur crédit immobilier' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
-                                </uix:NClick.Target>
-                              </uix:NClick>
-                            </Sequence>
-                          </If.Else>
-                        </If>
-                      </Sequence>
+                        <If.Then>
+                          <Sequence sap:VirtualizedContainerService.HintSize="376,250" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ClickType="Single" DisplayName="Click 'Ancien'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="53354aae-e7c2-4b36-b5a6-aaf41fa6a491" Version="V1">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.hellopret.fr/simulation/" DesignTimeRectangle="608, 369, 77, 36" ElementType="Text" FriendlyName="'Ancien'" FullSelectorArgument="&lt;webctrl aaname='Ancien' tag='DIV' innertext='Ancien' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Ancien' tag='DIV' type='' class='toggle_input__content' check:innerText='Ancien' /&gt;" Guid="7fc610ec-4a62-4fae-903c-9895f749390b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFEAAAAoCAYAAACGohY/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAARASURBVGhD7ZrZS1RRHMf7B3rpIeipJwkfpF4iaN9oo6JCIikzwYikrLTA0qZF2lXaMBMrRCuiHaxILFFstRJDs2zTQiu3Zhx1Vv3l9wfn6r1eZ+4sqeV5+MDcOb977pzP/Z3fOTNzR1FXN0kCQ0oMAj5J7HZ3kd1mo3arlSy/zdTa0kItzc0jGovFYkyiy+lkcTjJamkje6eN3E4XS9WLH0nAiVeJHe3tnHGdHR1Smg4eJSL7MGWRgVLewAwo0elwcPZh2uq1S3rRlYgMhECHza56X6KPrkRMYZmBxuknEYsIamDf9ySeUUkU01guIr6hkogMxDamb4DEO4pEZB8OZBb6jiIRX+XwTUQbIPGOIhFT+V9YkV0OF1VVf+r5vMOn7CgSsa3Bd2FtgD80NbVSUelLelZW0ZPhwd1r3n1QRKPGTaLDp7J124cCRWIwV+X0zFweaOjMlVRZ/VE3xl9qPtVSTPwBvkF67UOBIhEvtI3+YDa3UXjMTtqy5wjNXhVD2Xm3dOP+J4Iu8VV5FY2fvJgelbygHaYTtGlXSs+2qbfW3rn/mKLi9lL522ramHCQRodMo7A54VTy9LWqn7dVNbR+azK3jwmdRftOnOM6iP4XrNnM/YhY9H8yK4+vi/jo7Sb69v0Ht9k67ZR89CwdPXORrzFjRTTPkrWxe+jnzyalj0AIusTMnOucgfUNv/j1xHmr6X3NF6U970Y+DxQDjt+XSrsPnebXiyJiuZYi5t37zzRlyTo+9+KVO1weUjNyeFEpff6GJaAfxKLmJuxPownTV/D1UDMhecM2E0uHYNzIsWFzuc+DaedZMvpISc8KSgkLqsQ2i5UityRxBjrsDqqo/EAhU5crAwZ4jQHkFxTzANxON4sUsnEezofYsvJKVf9AKxGZOW7ifNU1Coqe8nVxfSERGVhbV8/tuMG40dpZ4i9BlSikZVy6Rs3Nv+nL1++0NHKr6sMKiZAhzkN2CIk4b2FPJqGuor6KGIFWougPNRhTFiAzkXmIFRLRJ/rGOeIaw1IiphMGpAXTCEIRY1QiMhqZLWIERiQKsJIPqsRAtzhiKkdsTqS6bw38QcHte494kDfzCznOm0QxaHEsYgRaiThGjc3KvaH7+QdVYqCbbewHsS/EItD3fdShqcuiKC7pGC8C3iTi+OHjJywGpQALBTAdzyCL2dpPIhaP2MTDXEMvXL7N9a6w+DldvfWApQ6qxEC/9mE/iIH3lQPEQiGmtBGJXS43Zy62PogF2O5AkFYiaGxsUbZLaMOW6EBqJgsaVInD8QcIbGlaW81kbWvXbdcCIRCEG6fX/rdQJCL1cRBIXRypKBKB/FHWP1QS5d8D/qGSCOQfVb7TTyKQf5n6hq5E+ee9b+hKBPIxEuMMKBHIB5qM4VGiQD5a5xlDEgGyEhmJE+RDnmoMSxRAmnzcWI3hx40lnpESA6ab/gCc65Sc0hrGxgAAAABJRU5ErkJggg==" InformativeScreenshot="8eea1bb4fbbbdf3c36a55913aa5fd097.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Simulez votre prêt immobilier - Simulateur crédit immobilier' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence sap:VirtualizedContainerService.HintSize="376,250" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ClickType="Single" DisplayName="Click 'Neuf'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="53354aae-e7c2-4b36-b5a6-aaf41fa6a491" Version="V1">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.hellopret.fr/simulation/" DesignTimeRectangle="695, 369, 63, 36" ElementType="Text" FriendlyName="'Neuf'" FullSelectorArgument="&lt;webctrl aaname='Neuf' tag='DIV' innertext='Neuf' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Neuf' type='' tag='DIV' class='toggle_input__content' check:innerText='Neuf' /&gt;" Guid="786e8ca9-46ef-45e1-ab2e-509fa023dbf8" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEMAAAAoCAYAAACl+UfqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALdSURBVGhD7ZpLaBNRFIa7FtduXLsWXApCXSq4Ed1IoQsRfCxEcCGKVQQfC1FaXRRLQREffYgLrVIoLSIuxLYbH7W0IWmTJiaZZJpJ0sz7d86JM9w81D4iNs0d+EjuuefezHxz5s5Apg2OC0kZKUOgLaMoaAnSaWTiCWQjUeQiSzBKOlzbqZQxt60dLcH2/ZjfeQjhvSeweOoWUm/esyASY5tWi8moA8mJX+/nitE8KS0tw4ekJJ+PShkiUoaAlCEgZQhIGQJShoCUISBlCDStjIU9nVB7BqE9HUX2zjOEdhysm7cWGiIjsrsD6v1h5B6/RaLjam28/xWi7acrxmwEEmF8DsHfjNmFzSMjduAcrKU075g+9T3YMT/u5Iv4cfxGzbj1olzqhbuiw4om+TdIer28tdJYGY4DVzeRufmoIt5oGTS/a1gwZiJ1+9dLQ2XYySycXAHmXJRL+Xcy1HtDcFSNK4kOqjj2ifOpb7n3JecXRj4E+frkDOxMDsqVPsZZznsDXbiWHcT93I3QUBnEyrtpwHb4oOrJoDj12ykV+aFxGN/CXFHawBj35x6OsKSVialgfqoAkkYVkTp7l9cIGuNoRejTsxzzczdCYysjq0G5/IA/qU0CRBmL+07CjCT4zCbP3Oax8SMXWYw5H+Nr/28yqN0Ul4l/0PnhieBs0w77cYK+0+JHFUF3BONLiGM0nubZcjKCSvHWEDMc/7OMXxTHJ7lytpwMitHa4JoWL6jVkpxCCenzPTXzENUyaGE1Q0vNLYMPwrur0CbGtSej5QVUWYbaPQilqw+lj1/52YH61e4BvkuQxPyLifIC6+U3tQzC32kxTg9kdNukuL+5RZ0rifqrny6tWAqF1+X8ppCxHsK7jiLReQ2JY101j9LUpnj88IWK+L/mv8nYjEgZAlKGgJQhIGUISBkCUoaAlOEh/3j2aN1XElbzskrdV362Iqt5jUlstDpSRoCLnxWKno19rA49AAAAAElFTkSuQmCC" InformativeScreenshot="d489777ebec733effc51cacf3247664a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Simulez votre prêt immobilier - Simulateur crédit immobilier' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                      <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="Entre la valeur du bien" ClickBeforeMode="Single" DisplayName="Type Into &quot;Valeur du bien&quot;" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="797,247" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="53354aae-e7c2-4b36-b5a6-aaf41fa6a491" Text="[CurrentRowEstate.Item(&quot;objectPrice&quot;).ToString]" Version="V1">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable BrowserURL="https://www.hellopret.fr/simulation/" DesignTimeRectangle="336, 425, 119, 37" ElementType="InputBox" FriendlyName="'250 000'" FullSelectorArgument="&lt;webctrl innertext='Valeur du bien*' /&gt;&lt;webctrl tag='INPUT' parentclass='field__control euro' /&gt;" FuzzySelectorArgument="&lt;webctrl innertext='Valeur du bien*' /&gt;&lt;webctrl tag='INPUT' parentclass='field__control euro' type='tel' class='' aaname='' /&gt;" Guid="aab73338-ee97-4da7-940b-e00c34b2bf24" ImageBase64="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" InformativeScreenshot="30bc861eefd5f0f57f4b625fe248532e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' url='https://www.hellopret.fr/*' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+                        </uix:NTypeInto.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NTypeInto>
+                      <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="Entre la durée du pret" ClickBeforeMode="Single" DisplayName="Type Into &quot;Durée du prêt&quot;" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="797,247" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="53354aae-e7c2-4b36-b5a6-aaf41fa6a491" Text="[in_dt_criterias.Rows(0).Item(&quot;maximumLoanDuration&quot;).ToString]" Version="V1">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable BrowserURL="https://www.hellopret.fr/simulation/" DesignTimeRectangle="691, 448, 78, 41" ElementType="InputBox" FriendlyName="'20'" FullSelectorArgument="&lt;webctrl innertext='Durée du prêt * ans' /&gt;&lt;webctrl aaname=' ' tag='SPAN' innertext='*ans' /&gt;&lt;webctrl tag='INPUT' type='tel' /&gt;" FuzzySelectorArgument="&lt;webctrl class='' tag='INPUT' type='tel' aaname='' /&gt;" Guid="44fc5604-5a95-4528-a797-33a611bb1fdb" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAE4AAAApCAYAAACbWx//AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAATdSURBVGhD7ZhfSGR1FMd77iWI6KG3CKK3HgIh8aGwEhPFTFoSpTWI0rTwSdQ1WRVkQ/wTKkoW9k9pKRWDxQoRyhAltT/SCs406+6sM6LOOK6OMzs6p/ke7+/nveMd53p1w4HfFw7ce875zXA+c37/5iE6iJKy05sCZ9OOwClZkwJnUwqcTSlwNqXA2ZQCZ1MKnE1ZBXcQ2KHtb36ku69V079PFtDywy+Q45GX6M6L75O/+3va39jSMs2FuK99iFbS3uaxMDzDl2zshVQycNHQffJ3fkuOR1+RBZuZ65lLFJz6UxtlVOj3m7Ty3GXTcTDEkJNSSgYu+Msf5Hz8VdOC4w0A7jvvaiMPhfeToAm7/fw7FLmzpo1KASUDd3AvSJ4367k498sf0M4PUzy1opF9iqx4yfNWowFA4Isb2siYolHyXftKxjC1t3pHuItheIZPxJGLMSmhZOCg3Z9naWfsV9N4+B8XuZ5+Qxa/caVPixBFVjfodsa7Mrb23jUGJoRn+EQcuRiTErIC7iSFl27x+iaK14Pb++0vQ0cZulETfCKOXIxJCZ0V3O5PMwY4/q7vtIgRCgzrZbzg0+eYwb2QOgs4HFFWL12RRbueep3Cfzu1KNHm1c+OYrGuRHfGK75jMSYlZBccNofNps9lwbCNjz5lvxCmrYhZBaef6onk8XioubmZMjIy2PDscrmovr6e0tLSKC8vj9+hkZER9qWnp9PCwgLNzs5SWVkZv2dmZlJbWxttbRnPkcFgkAYHB6mwsJDHZmdn08DAAPul7IADnK2+UcMUdWd9SBGPcWF/EOCcTqcsSG9FRUVUUlLCz3pwY2NjMqe9vZ1hiXdhLS0tFA6HOd/n81F5efmxHFhlZSWtr69z3unBxY4LgS9vGKDhnBa+eRyK7+OvZY5VcBiTSCiuqalJFlJaWkqjo6M0PDxMBQUF0p8IHLqsv7+fi5+fn5c/gFk+cnt6emhxcZGmp6dlh6ODWacCF4OGa5f+FnHr2WI+kpjpvDcHFIciURi6y+v1ahGipaUlysnJSQgCBuiis6KxWjo7O2Vsbm6O/V1dXfyem5tLy8vL7BNaW1s7mq6WwcW+CIdf5xOxD9SKZGi6zSBe530cwfokCkXRKF4IBdXV1XEsEbihoSH2CQlIMAFucnKSuw0+TOuGhgaamJjgLtV/n2Vwwck5AzRMr0R3U6HzPgDrIeBZr729PdPN4aQxZuBCoRB1d3dLeHqrqanhNZBlBRygiX9EYI7Hsuje9Qm+eplZNBw5HBj7hc7zyjU1NSWL6O3t1byHstJxVsAJBQIB/r7W1lbeVUVeR0cH7e/HTg7JwEV3Q+S93CSLs2L6tQwXd1zgzfL0ZuWSj3UsKyuLC8DOh+KEHA6HXP/OAg4/ALpOL3RzY2Mj51VUVND29vaDBwdZ+VvppLVSCEVVV1fLYquqqnhNGh8fp+LiYum3Cw4bB3ZPdFhfXx/vqH6/n2ZmZuRRB8sBQP4v4CBMYbM/Mv2fXOcbiFUlOsehE5PtqlY6DhuQfmrqDZsF4qxk4C6i3G43r2fi5oBngDqPzQHa3NzkjsvPz+cYgNXW1vJSIXfWVAR3IaTA2ZQCZ1MKnE0pcDalwNmUAmdT8eBWVn3KLJgCZ9MUOJumwNm0Y+CUnc4UOFsWpf8Az3bfSXaXBm8AAAAASUVORK5CYII=" InformativeScreenshot="8f42d6acb5abbcc8d251e83c7ac5f700.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Simulez votre prêt immobilier - Simulateur crédit immobilier' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+                        </uix:NTypeInto.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NTypeInto>
+                      <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="règle l'apport sur 0 (non précisé dans l'énoncée)" ClickBeforeMode="Single" DisplayName="Type Into &quot;Apport&quot;" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="797,247" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="53354aae-e7c2-4b36-b5a6-aaf41fa6a491" Text="0" Version="V1">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable BrowserURL="https://www.hellopret.fr/simulation/" DesignTimeRectangle="646, 298, 123, 41" ElementType="InputBox" FriendlyName="'325 590'" FullSelectorArgument="&lt;webctrl aaname=' ' tag='DIV' innertext='Apport*€' /&gt;&lt;webctrl tag='INPUT' type='tel' /&gt;" FuzzySelectorArgument="&lt;webctrl class='' tag='INPUT' type='tel' aaname='' /&gt;" Guid="ddef6285-b43c-496c-b9a1-b8fdd87835cf" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHsAAAApCAYAAAAVgVaDAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAc1SURBVHhe7VprbFRFFPa3f0yM8Yd/jDExxsSoMTaKjdZUJTXSGGxQIgohiBQojREpPmpQIrYEq5KiViOKigKpoqj4qlWqhFJRAQsqtN1ut92yfex2+9h2n8f7Te/czs7O3b0tu1i590u+dDsz5+6Z+WbOnJm7F1A8QQ7tQUdsG3FKbAfnLxyxbQRHbBvBEdtGcMS2ERyxbQRHbBthWmJr9RPH26i/Yhu5b1pKbRfdSacvLKCOK+ZT78JKGms8QoloTG8sIY2tb0U1hX45pvz+2MAQeW4vZW2tMNR0VLdMRXDHfqWNimeWbKTE2IRuqUPzD372PryB2i+bx9rhr/dBre/fNFNiIqI3VAN98b/yMbnzlhrfg88oQ13OgfHVmFHs8EkXdd+1xnDSjN4Fz1CsL6BbTcKqbf/arRQfCelWk5gtYidCEzTw3NvGJFURfY96B3SLZEwc+YvcNy5R2oGoQ5ucworYifEwnVm2Semkiv3rtxkrfLq2/i07NaMpP2aD2OjL4KYdynYye+atpZh/mNlxRNp70grN2XXLoxT1+HSrHMCK2MD4oVZqv/QeFoKD735J0S4fGwxw9KuD5Lr6AcNp9w2LKeLy6pZEY98dZisCIW/g2TqKnPIYtiOf/mSERNBzxyqK9U9FBlls2M8UotjwN/x3p16THuE/28l15f2Gree2FTTe3EqJcJSJ07v4BaMOHHr9k6kJq/31V39g1GEcht7cy0I+iM9itEBbcbJnFVbFhmOsgyb7UqC23nBYHsj40MjkvuTz6yUCtI71P/WGqe1sEFu0w4THxBcBwbEqeRtxwiKsd+U/ZtQhPxHHEJ9RxuvR1mwrSId4PE7Nzc1UWlpKc+bMofz8fCorK6OmpiYKh8N6I4tiZ0Jw+xeGw/LKzgQIyG1no9iifxBDzkkQ5vue2Gq0YROi5SSrGz94PGnlwgcZol9oC5vpIBaLUV1dHeXl5Sm5bt06CgQ0n89WbISy0M/HqPO6RYbDfWUvm0YAGUjIkMlz266bl1G0p1+vTRUbSZBv9RaWxeN/ls1r/4dPdLAokQ7ioHZcfh8TEasQAwzic/D9/RQfHdctJjFdscHhj75ldeJ3gqqcAmViG9WESIeGhga2miEsVnRlZSVVV1dTUVERK6uoqKBQSEt8ZyK22HmZqmw8HUa/PpQ088XkDrCaoLVdfDcN79QGOI3g8sCbEUlWtHcqlIpblDKMS6EahA0w+Pw7RplZNEEZ6ng72FhFMBiklStXMlELCwuppaVFr9Geq4Xv+vp6NhkYsil2z71rKdLWrbfKDBzJxIjABgMrVIBVsUEketnKxn3Lq4xsnCenvI4laIdPaM7F2X6tOm1gjABxrKyKzW2toLW1lQoKCpjYWNHj48lRKQnZFBvEgI/s+SFjSMWe7ilcbdhhdSOEynai2J3XPkSjnzexhI/VaUecwZd2JEUGOQESwcVG+741NZOnAi2KgEg+ISJ/jriCITrE53Uqtl0yN8mPXIvtcrmouLiYiaxibW2t3lLATMQWgYHCoPUu2pCxUxwIkd1zy432GCScY8XwzQHhkLCEDvxuiCxCzmbTJYcoxy0fjlKqySivYP/mD/WaVJ9FIm/A9iOW8X0Xz+BlVsUWv9cM/4nYHLg4EEOyWZKBQcOeyNuBgxu3K4W2CjE8Z5po6ZAp80fiFti6x7juRBTzrdpCkQ4vuy/gdiByEUDeOrKdoEFULvC+ffv0UhNkS+xMAwXEBoMpFxBIRqxm7mY4V2KbARNVXNmiD7k6euV0ZUfdZ2hk7wFTYeRQJGeUOGLJiYzqLjwFWrjFMSZy2qMXJEMO4/INnAiE8eHdDaZ9kMO4KEz4H3fKkYxj4o9TSTdsYt6Qq0uVnIo9VPcZc8a4LtWyUMxonLMhtHf+esNhkIcxAIL6Sjcn1XtLnqZIZy9bTTLZ3qzvqXywcLTCMyBIfGSM+Rrt7mNbgLhy5KObCNM+aAlY6MffkhI0iMf2dg1IBLuLHifXVQvYTaDY97GGX5PuvTFZ8CwDWj9yeV2a9Wycd5Y7lInyywB5T8pE8SUEMntVGxUx6MgdVJhuH8QXMmKYzURV/iFfp5pxJi9C5HP20aNTOQHO2djHGxsbJwusiI0ZGHhtN1tdKidFYkDlbPhsxLb6ehSrMnyqi9moYLUPWGWBV3clCYboIp42VITd4Ivvse9RwcorTh5JpgvxBg2CV1VVUU1NDZWUlLCyGd2gxYOj7JyL683OaxYajho/XjB5gX82YjNofuGHDwOVb1HXrcuNsIdsuKf4SfbWzWyQZaAPw7u+Z/7yK1fQff0j7H01thYltFWO7QqCij5gHPCDDCvXtdiiVD9eQIYPv2aKTHfj5eXl5Pf7J/W1KraD2Ytz+tbLwf8Ajtg2giO2jeCIbSM4YtsIjtg2giO2jSCL7fb6HZ6ndMS2ER2xbURHbBsxRWyH5z8dsW3DBP0LHci3FYkUxtEAAAAASUVORK5CYII=" InformativeScreenshot="b5f964830605d6a5cbdcb8e03fbe5a60.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Simulez votre prêt immobilier - Simulateur crédit immobilier' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+                        </uix:NTypeInto.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NTypeInto>
+                      <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="règle les revenus mensuels" ClickBeforeMode="Single" DisplayName="Type Into &quot;Revenus net/mois&quot;" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="797,247" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="53354aae-e7c2-4b36-b5a6-aaf41fa6a491" Text="[in_dt_criterias.Rows(0).Item(&quot;monthlyIncomes&quot;).ToString]" Version="V1">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable BrowserURL="https://www.hellopret.fr/simulation/" DesignTimeRectangle="674, 795, 93, 37" ElementType="InputBox" FriendlyName="'3 500'" FullSelectorArgument="&lt;webctrl aaname=' ' tag='DIV' innertext='Revenus net / mois*€' /&gt;&lt;webctrl tag='INPUT' type='tel' /&gt;" FuzzySelectorArgument="&lt;webctrl class='' tag='INPUT' type='tel' aaname='' /&gt;" Guid="3e6afe79-1e6f-4d72-9328-5a02b5ebed72" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGEAAAApCAYAAAAlDUeiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAS0SURBVGhD7ZlbaCNVGMd99kXwwQdfRHwRX1TEgqVopSpU3CJrURYWXRYv20q3CEu7oBVFkEa0XuiCQVS84e5SWK26CtaKkWVDWaGuQUXbTdO0adOtSdPNJs1tPvM/mZlMpnNrzqQ9D+cHHwlnzv/kzPefc5mTa6iikIy9DWmCAFE3QbL7SBMEQJogANIEAZAmCIA0QQCkCQLAZUK1/tbFObo8fIJidx+mueseoH+v7aRLN++nlQMjdHX6AimlslrZnswnZ5nOS6weeo2Uq1uqsk55fYNSb39JsbbDel18RxmuOcGj9YVmTSj8GaWlB4/qnbaLxOMvUnktraqs4TVh68JfFLvrkGV9BK6hjhU8Wt9oxgQlX6DVp1+37LRVXD5+wnFE8JhQnF92TKIWi/c8Q6V4UlXV4NH6SjMmgPz5CM3f8DCbhjIff0ulxSRLDiL73TmK3vqEfhOxO5+iYjShKrdjNAG6wt8L6hUXFIVSgc90LabDjffPkLJVZIHv2hSJQF1ouLV+06wJ6Gg+HGGfVqTHJ/QbcEtssyaUEuu02PGcrk0eCTT0B99Rpl1HXWgAj3YnVCoVCofD1NfXR+3t7dTR0UEDAwMUCoWoUCiolZo0wY3MR9/oN9CqkZA/d7HhaUU7Zoxtoy40gEfrlXK5TMFgkNra2ixjaGiI0unqeum3CUqhRLlff6eF2w/qN7A28JbtiAHGm71006O0/lKQ4vc/z24cge+ZT89SJZtXFTWMOkQuNKteqYMyYx0t2Txar0xNTbGnHwnHCBgZGaFAIEDd3d2sbHh4mHK5nD8mIGnGzhrDz93R8r5jVFqpTwn/vfqhfs1uBKEM17R60AAerRcymQz19/ezZHd1ddHMzIx6pdpudRqamJhgJjFaacLyI8eoOLek1rLHqwmI5LOj+u7I+LteEwkN4NF6IRKJUGdnJzMBIyCfbxzFDbTSBMT8jfvoyumfHHcWmgmYetaOjlHxnzjb0iKw+MfvPVJvr7ojw84MiGhCNBqlnp4elnyrGB8fV2sa8MMEI0gckrhy8BXXm9TAoo2368If85Zmadthrb3UG5+zcny6/YY5kX5onRDCBA28CBkX550uakZwdBC/r09vS3sizdOYSAszkq0lfnJyUi21oVUm2CWuGezaEnGLuqsjoRRbpStnfrHdepqHstPOAtPR5qkp27bM05GWMBFf1nbVhI3gV6xz+rFFPFlbTKvvCTAgsf+4fgOI7PfnVeV2bNuq7oJyP//WsDBHb3mstnYAnqMHHq0HWr47Kqc2aan7Bb2DboH9PTRW7LSt1JtfNCQDhuGAzaquMawO4Xi0bpjfE2Zn62sO3hOwTkxPT9cKmjEBT0r63VM0d/1Dlp02BhLsdGThtS08lel3TrIRYsbLcbQ+ekzwaN0wvjHDiNHRURobG6Pe3l5W5ssbcyWTpezXIfYHzsJtB/SO63/q/BBmSfYC2to8+SPTQa8n4Y4naf3lD6i4sKLWtMbuj5n0e6dZ207waJ1wOzsaHBykVCrFZ4LEnT09RZXsAGmCAEgTBECaIADSBAGQJgiANEEAzCbEEikZuxzSBAFCmiBASBMEiG0myNi7kCbseSj0P5/HDTRJbUI1AAAAAElFTkSuQmCC" InformativeScreenshot="3a9cc9989c599a7cba3d98862d28f548.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Simulez votre prêt immobilier - Simulateur crédit immobilier' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+                        </uix:NTypeInto.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NTypeInto>
+                      <If sap2010:Annotation.AnnotationText="Si buy alone = true&#xD;&#xA;-&gt; clique sur 'seul'&#xD;&#xA;&#xD;&#xA;Sinon &#xD;&#xA;-&gt; clique sur 'en couple'" Condition="[Convert.ToBoolean(in_dt_criterias.Rows(0).item(&quot;buyAlone&quot;))]" sap:VirtualizedContainerService.HintSize="797,496" sap2010:WorkflowViewState.IdRef="If_2">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If.Then>
+                          <Sequence sap:VirtualizedContainerService.HintSize="376,250" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ClickType="Single" DisplayName="Click 'Seul'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="53354aae-e7c2-4b36-b5a6-aaf41fa6a491" Version="V1">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.hellopret.fr/simulation/" DesignTimeRectangle="617, 810, 60, 36" ElementType="Text" FriendlyName="'Seul'" FullSelectorArgument="&lt;webctrl aaname='Seul' tag='DIV' innertext='Seul' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Seul' tag='DIV' type='' class='toggle_input__content' check:innerText='Seul' /&gt;" Guid="a0b55006-9522-47c7-bef0-575cf72597ec" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEAAAAAoCAYAAABOzvzpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAMASURBVGhD7ZrZS5RhFMbnH+imi8CrrrzoQuxGgiTKilaQNqTIFqEFIykvDKPwIrMiScMs2myMQkdaXDAtcclSsxTNsDLLjRQSZnSccZx9njwnvo8Zfb0ZJ5jx/S4eZt7znhfO+X1nnm82Hbw+yCwNgPLE5/HCYbdj2mrF1KQZEyYTTEbjkpfO7XJx07SwTlngmLHD43IzEH9SS1U6utIzNps0Dc+VTtbGFWkmKArKJA2AKCiTNACioEzSAIiCMimiAMzY7DAaJ+F0OIX7wShkALxuD9o+fUbu7WJcu/UIbxpbuWBRbrB6+rwauqjVaGnvEu4Ho5AAcDvd3DQV56+t+1MxNDw6Lz9YhS2Azu6viIrdjEs37s1+pHbwNHR090JfWsFwRGeCUdgCqG9u58Iel1UJ9xV1f/mO3SnpnBuTsA+lL2tVQARxy+zEVNQ0qvkFD0uQdCIDA0O/eR22APp/DWPNjmQsX7Ue1wv1GB83zsuhiVgZtx2H0y6irqkNl/MfYEXMRoZH+9QUNUdNKmdoomI3JaGvf5DXYQuA9KGjB3HbDnKBy6LjkXI2S339k2unZ+Ui8cgZFY5lyopDpy/gfE4BPC5P5AMgkevX1L9n86NCaSq+9Q3wrYti8YlHkZ13nw3zakERj/zJjGw+tyQAKCITLDZUcrF5d58IASgqeVHDExLRAKatNvwcGAn4Wq25rVMFQFeYrnTC3uMYHfsTcFbRXABkjuey88MfgMvp4nGm1z0ZXHVdM55V1WHDnmNsemR+lPe2tYPXB1Iz0dP7A4Ozzn5HX4bhkTHep1j02kTsTE5DbUMLmyTl+wMwlL9mAIVFBr7dKjUsRiGZAJNpEjk3/xVMBZLIEBvefVSngh7LXzXw7U/JWbcrRQU0983UqcwrqKxtCgCg3G38Y4tVSD2AmpiYMMNstiz4LTP5w0I5tKa41TIdEPcX+QWdD9UbrP9igpEkDYAoKJM0AKKgTNIAiIIySftxVPqfx6X/g4TyhBqW8i8y/jRklOQAfPgLm02LzeFSsHkAAAAASUVORK5CYII=" InformativeScreenshot="0311836aae0032b74df2280fb2eacd13.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Simulez votre prêt immobilier - Simulateur crédit immobilier' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence sap:VirtualizedContainerService.HintSize="376,250" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ClickType="Single" DisplayName="Click 'À deux'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="53354aae-e7c2-4b36-b5a6-aaf41fa6a491" Version="V1">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.hellopret.fr/simulation/" DesignTimeRectangle="688, 810, 76, 36" ElementType="Text" FriendlyName="'À deux'" FullSelectorArgument="&lt;webctrl tag='LI' innertext='À deux' parentclass='toggle_input__list' /&gt;&lt;webctrl aaname='À deux' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='À deux' type='' tag='DIV' class='toggle_input__content' check:innerText='À deux' /&gt;" Guid="9c9fb5ac-ff5c-461f-9890-af89d4f9a7e7" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFAAAAAoCAYAAABpYH0BAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAQ0SURBVGhD7ZpJiBNBFIbnLJ69ePYseBQEPYgoKCJ6EUFBFFEUVxTFBQUVF3QURBwEBR1cEAU3XHDDfUVcUcfErJN9snZ60uln/y9W6MSKJukeUVMNP8zUe6lOff2W6k53UdkkpfalADpUVzqdpkQ83tmKxSgRClPSG6CML0S6ViTTKEuB1asLE3weNr6zNXwCfRk5lTxjF5B/6W6KXr3PUNMePxmDJSk4IQWwgQA0uLWHEsEwR6UMHqQA/kYAGTlznZJffdJoVACbVGDVfo7GYkFTANtVaF8vQ7RHogLYohCJSGcF0IFQEzOegALYrtBYRCorgG0qtOMY7xNdBZjcdYJKwRjFVh+Q2v8ncRRam21XAaYOnqVyOkdmoUjJvb1Sn/9JuGNxPYWD09aQ/qaPclceUt+IKVKfRgrNWEf987bRtzFzpfa/Tb5FO90HGFm4kzK91yh99CL5xy+W+jSS/sFLpl6ixI7jUvvfJtw7uw6w+OoT4TCtDtVqGv9rAFEHXQUYnrOFjGSGSv4IlXMaFe6/lvo10r8GEE9xXAU4cPg8kVGmzKkbNOgNc0cOTF4h9UV9hJ+ZL3LEGtEUqx4gN6ZUhn1gy998Vq2ROF85m6fc5QdV/+LzD2Qk0hTf3EPR5fvIiCSpFIhSeO5Wtmcv3KNyJk/Z83ern3EiVwFqj95y5EVXdvPfv4qm9PErDNvUdI5U/aPXImTWfEZcEIDNnr1F+nuPtfu3LtDpm5U5jl1msIXbL6rz1kcx4GJe+KBB4WL86sK2KtcAhmau54Ui8nzjFlGq+zSZJaNmcUKwww91MtV9pjpuX7zwKQ9kKbJkD9ur5/gSIO/oOU0BBChRUoovPrLNfk6ncg2gAKY9eUf987dTfFMP7wllV5sjwbIh/eArxu2Lxzjs2FMi8rA10t/28ZiYsxmAUHL3CR7DgTkAX9icyjWASFnZgRQFTLuvgNMywB/K33rOEdosQFEucGgP37S8P20ot5qISC0jPkCxdYd48RDXH+vIXX1U4x+YuIwLez1c++I59axIQ+o1ujWsB4jmMtgXrAGI5sE7g2/9pH/ysQ0RaZ+nXbm2jcF+D/UMe0D7eHzDYY4gfPn6TbUo7oCOBqE9tiIYTcW2+MzJa5UmYvmgbgE2SgTmhV2UDZSD7LnblSZjmwORVrjzksfQkOIbj1S+j3XxgtPX1nyfduTaRhpdFDCQKvbxarOQpHFg0vLKgq3P4UB31J6+rwEIAACNMXFg2wMYsCPikNLiAJjcpYo/5sDDDZx78LO/uvXBNgidHGXAaSoPya1cq0KqIs08o2ZJ7RBs8AnP3vTTovE/xnEfbR//ExqShwmdoiF5nNVJGpIHqp0i9UjfodSPSg6kftZ0IPXDugOpVzvaFBqGermoDQGcer2tWTl5wVK94mvJySu+skGl5qUAOpJJ3wFlD54Rty76HAAAAABJRU5ErkJggg==" InformativeScreenshot="ef615fa2346cfb880015fb85e9d8a494.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Simulez votre prêt immobilier - Simulateur crédit immobilier' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                          </Sequence>
+                        </If.Else>
+                      </If>
                     </Sequence>
-                    <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Nous avons'" sap:VirtualizedContainerService.HintSize="906,1305" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="53354aae-e7c2-4b36-b5a6-aaf41fa6a491" Version="V1">
+                    <uix:NCheckState Exists="{x:Null}" sap2010:Annotation.AnnotationText="vérifie que HelloPret.fr renvoie bien la phrase :&#xD;&#xA;&quot;Nous avons trouvé les meilleurs taux&quot;&#xD;&#xA;&#xD;&#xA;Si oui&#xD;&#xA;-&gt; démarre l'extraction&#xD;&#xA;" DisplayName="Check App State 'Nous avons'" sap:VirtualizedContainerService.HintSize="906,1588" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="53354aae-e7c2-4b36-b5a6-aaf41fa6a491" Version="V1">
                       <uix:NCheckState.IfExists>
-                        <Sequence DisplayName="La cible apparaît" sap:VirtualizedContainerService.HintSize="476,1089" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                        <Sequence DisplayName="La cible apparaît" sap:VirtualizedContainerService.HintSize="476,1270" sap2010:WorkflowViewState.IdRef="Sequence_10">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:Double" Name="loanRate" />
                             <Variable x:TypeArguments="x:Int32" Name="monthlyPayment" />
@@ -286,51 +286,77 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </uix:NExtractData>
-                          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_bestRates]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="434,799" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+                          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_bestRates]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="434,980" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
                             <ui:ForEachRow.Body>
                               <ActivityAction x:TypeArguments="sd:DataRow">
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                                 </ActivityAction.Argument>
-                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,683" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,864" sap2010:WorkflowViewState.IdRef="Sequence_14">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Assign sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_10">
+                                  <Assign sap2010:Annotation.AnnotationText="le Taux" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="Assign_10">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:Double">[loanRate]</OutArgument>
                                     </Assign.To>
                                     <Assign.Value>
                                       <InArgument x:TypeArguments="x:Double">[Double.Parse(CurrentRow("loanRate").ToString)]</InArgument>
                                     </Assign.Value>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
                                   </Assign>
-                                  <Assign sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_11">
+                                  <Assign sap2010:Annotation.AnnotationText="les mensualités" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="Assign_11">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:Int32">[monthlyPayment]</OutArgument>
                                     </Assign.To>
                                     <Assign.Value>
                                       <InArgument x:TypeArguments="x:Int32">[CInt(CurrentRow("monthlyPayment").ToString.Replace(" ",""))]</InArgument>
                                     </Assign.Value>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
                                   </Assign>
-                                  <Assign sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_12">
+                                  <Assign sap2010:Annotation.AnnotationText="le cout du credit" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="Assign_12">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:Int32">[loanCost]</OutArgument>
                                     </Assign.To>
                                     <Assign.Value>
                                       <InArgument x:TypeArguments="x:Int32">[CInt(CurrentRow("loanCost").ToString.Replace(" ",""))]</InArgument>
                                     </Assign.Value>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
                                   </Assign>
-                                  <Assign sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_18">
+                                  <Assign sap2010:Annotation.AnnotationText="copie de la référence de l'annonce pour lier tous les résultats issus d'une même recherche" sap:VirtualizedContainerService.HintSize="334,118" sap2010:WorkflowViewState.IdRef="Assign_18">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:String">[adReference]</OutArgument>
                                     </Assign.To>
                                     <Assign.Value>
                                       <InArgument x:TypeArguments="x:String">[CurrentRowEstate.Item("adReference").ToString]</InArgument>
                                     </Assign.Value>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
                                   </Assign>
-                                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{loanRate,monthlyPayment,loanCost,adReference}]" DataTable="[out_dt_financement]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+                                  <ui:AddDataRow DataRow="{x:Null}" sap2010:Annotation.AnnotationText="Création de la datarow et ajout à la table financement" ArrayRow="[{loanRate,monthlyPayment,loanCost,adReference}]" DataTable="[out_dt_financement]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="AddDataRow_2">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:AddDataRow>
                                 </Sequence>
                               </ActivityAction>
                             </ui:ForEachRow.Body>
@@ -360,6 +386,7 @@
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </uix:NCheckState>
@@ -370,6 +397,7 @@
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ForEachRow>
@@ -377,9 +405,9 @@
         </ActivityAction>
       </uix:NApplicationCard.Body>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="1912, -8, 1936, 1056" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAABgWlDQ1BJQ0MgUHJvZmlsZQAAKM+VkU8oBFEcxz87iESSPUgOc8CJEpIjS0lR21q1i4OZWbvUzthmdnNxVK7KwZ+LfwcXZ64Orkopf0pOjk7ERRq/N6t2U6u8er1P3/e+3977PtAOspbtVfeC7eTd2HhETyRn9dpnNMLUA82G5eVGotFJKo6PW0JqvelRWfxvNKYWPQtCuvCwlXPzwgvCg6v5nOId4bC1ZKSET4W7Xbmg8L3SzSK/KM4ErKnMsBuPjQqHhfVMGZtlbC25tvCAcEfKdiRfSxQ5pXhNsZ0tWD/3VC9sWHRmppUus51xJpgiio5JgWWy5OmR1RHFIyb7kQr+tsAfFZcprmUscYyxgo0R+FF/8LtbL93fV0xqiEDNk++/dULtFnxt+v7noe9/HUHVI1w4Jf/KAQy9i75Z0jr2oWkdzi5LmrkN5xvQ+pAzXCOQqmRq6TS8nsg3JaHlGurnir397HN8B3HpavIKdvegKyPZ8xXeXVfe259ngv6IfAPkrXJudz6+jwAAAAlwSFlzAAALEgAACxIB0t1+/AAAAlVJREFUSEudVruO00AUdULNN1BQU/EjFFRUhASElIYfAIke8SigQhsaHqJAImxBtQ1aim1YRMdKNAghdhPBrmFjzyvcO3fGsR3PHcfSkTW5Gc/xueeMx8myN4xhAFfdrxXbgiHAdasYmeTaWjGCNgoII7h20BEkMEm10keCDggrqBF0tSHWIqDxTKq3sQEAlsAuDcbqC+Pl5vYS4iaL9x+F1GJnr1ZvCZ4Acyl+zqUy2ewPZXTTpEYUIMHhPNdGztJiaW0ji3D2cAELE8DNfavg1+8VgTfcTSjGYUQUaEuQGaPmf5tSZHc7yxQz2SvIZ6lOBsABOqhXvmORDcgRwM4qt0hfvi12P4Hn4uhEHHyXk2199gZM80zNaGEyKUgXi+MUeoVji0xhdvnVAazJFFMiAAgl9r/KD/v5tx9Ugf2hL92p31hFVMFwRfDkFb2OVHJdfjmgonz8umtMEaDAEWSnUpXSIp6+IQK9tV0UGxFRgMnxJtt20yk0UI+e53oJdTWZluevo63JmKIEVvfH3IOXTsGzd8XkRrAEGHlsEbyLSIE7Evoj/dARqAm2iDkqIgpgZwEBJFIe/XOJTFCWuf/CE0zxZzisEQIAtQheFdQfetiSgil/ELX1AHZvcUpDUXkCMXlbTG4E74Ft0c5eLky++9k+u4u8unJXHJ9m6UKN763mN4EjoG7gg1+8Va4T9Lmby/PjWnEdcQ9KHyxu0GBp+KMmSGCSqziwdzIpZP4iRBX4ndUVHIE5UxWOajbma+EBomCyBNWOM7sM0JIgCJ+0AEdv+B+iZiN8R0R/QAAAAABJRU5ErkJggg==" InformativeScreenshot="d8839b0be796f8390b488bc41d4bb999.png" Selector="&lt;html app='chrome.exe' url='https://www.hellopret.fr/*' /&gt;" Url="[urlSite]" />
+        <uix:TargetApp Area="1912, -8, 1936, 1056" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAABgWlDQ1BJQ0MgUHJvZmlsZQAAKM+VkU8oBFEcxz87iESSPUgOc8CJEpIjS0lR21q1i4OZWbvUzthmdnNxVK7KwZ+LfwcXZ64Orkopf0pOjk7ERRq/N6t2U6u8er1P3/e+3977PtAOspbtVfeC7eTd2HhETyRn9dpnNMLUA82G5eVGotFJKo6PW0JqvelRWfxvNKYWPQtCuvCwlXPzwgvCg6v5nOId4bC1ZKSET4W7Xbmg8L3SzSK/KM4ErKnMsBuPjQqHhfVMGZtlbC25tvCAcEfKdiRfSxQ5pXhNsZ0tWD/3VC9sWHRmppUus51xJpgiio5JgWWy5OmR1RHFIyb7kQr+tsAfFZcprmUscYyxgo0R+FF/8LtbL93fV0xqiEDNk++/dULtFnxt+v7noe9/HUHVI1w4Jf/KAQy9i75Z0jr2oWkdzi5LmrkN5xvQ+pAzXCOQqmRq6TS8nsg3JaHlGurnir397HN8B3HpavIKdvegKyPZ8xXeXVfe259ngv6IfAPkrXJudz6+jwAAAAlwSFlzAAALEgAACxIB0t1+/AAAAlVJREFUSEudVruO00AUdULNN1BQU/EjFFRUhASElIYfAIke8SigQhsaHqJAImxBtQ1aim1YRMdKNAghdhPBrmFjzyvcO3fGsR3PHcfSkTW5Gc/xueeMx8myN4xhAFfdrxXbgiHAdasYmeTaWjGCNgoII7h20BEkMEm10keCDggrqBF0tSHWIqDxTKq3sQEAlsAuDcbqC+Pl5vYS4iaL9x+F1GJnr1ZvCZ4Acyl+zqUy2ewPZXTTpEYUIMHhPNdGztJiaW0ji3D2cAELE8DNfavg1+8VgTfcTSjGYUQUaEuQGaPmf5tSZHc7yxQz2SvIZ6lOBsABOqhXvmORDcgRwM4qt0hfvi12P4Hn4uhEHHyXk2199gZM80zNaGEyKUgXi+MUeoVji0xhdvnVAazJFFMiAAgl9r/KD/v5tx9Ugf2hL92p31hFVMFwRfDkFb2OVHJdfjmgonz8umtMEaDAEWSnUpXSIp6+IQK9tV0UGxFRgMnxJtt20yk0UI+e53oJdTWZluevo63JmKIEVvfH3IOXTsGzd8XkRrAEGHlsEbyLSIE7Evoj/dARqAm2iDkqIgpgZwEBJFIe/XOJTFCWuf/CE0zxZzisEQIAtQheFdQfetiSgil/ELX1AHZvcUpDUXkCMXlbTG4E74Ft0c5eLky++9k+u4u8unJXHJ9m6UKN763mN4EjoG7gg1+8Va4T9Lmby/PjWnEdcQ9KHyxu0GBp+KMmSGCSqziwdzIpZP4iRBX4ndUVHIE5UxWOajbma+EBomCyBNWOM7sM0JIgCJ+0AEdv+B+iZiN8R0R/QAAAAABJRU5ErkJggg==" InformativeScreenshot="d8839b0be796f8390b488bc41d4bb999.png" Selector="&lt;html app='chrome.exe' url='https://www.hellopret.fr/*' /&gt;" Url="[str_urlSite]" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1162,121" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;fin de recherche sur HelloPret&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1058,121" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;fin de recherche sur HelloPret&quot;]" />
   </Sequence>
 </Activity>
